@@ -1,0 +1,53 @@
+/* Remove extra padding from body */
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: beige;
+    overflow: hidden;
+}
+
+/* Set content display and content child display */
+section#content{
+    width: 100vw;
+    height: 100vh;
+}
+section#content > div{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* LOGIN PAGE */
+
+#login-content > *{     width: 100%; }
+#login-content header{  height: 30%; }
+#login-content section{ height: 65%; }
+#login-content footer{  height: 5%;  }
+
+#login-content header > *{
+    margin: auto;
+    font-family: sans-serif;
+    text-align: center;
+}
+#login-content header > *:first-child{
+    padding-top: 10%;
+}
+
+#login-content #login-form > *:first-child{
+    margin-top: 15%;
+}
+#login-content #login-form button{
+    width: 75%;
+    height: 20%;
+
+    display: block;
+    margin: auto;
+
+    border: none;
+    font-size: 1.75em;
+    background-color: darkred;
+    color: white;
+} 
+
+
+
