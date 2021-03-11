@@ -5,15 +5,22 @@
 
 //Generates a game code from the list of existing codes
 function generateGameCode(){
+    //Get the game codes
+    $codes = loadGameCodes();
+    //Get a random value
+    $suffix = array_rand($gameCodes);
+    //Get a random number and add it to the end
+    $newCode = $suffix . array_rand(["0","1","2","3","4","5","6","7","8","9"]);
 
+    return $newCode;
 }
 
 //Loads the list of game codes
 function loadGameCodes(){
     //Load in the JSON file
     $gameCodes = loadJSONFile('../data/gameCodes.json');
-    //Get a random value
-    $suffix = array_rand($gameCodes);
+
+    return $gameCodes;    
 }
 
 //Loads the player codes and returns the array object
