@@ -8,9 +8,11 @@ function generateGameCode(){
     //Get the game codes
     $codes = loadGameCodes();
     //Get a random value
-    $suffix = array_rand($gameCodes);
+    $suffix = $codes["codes"][array_rand($codes["codes"], 1)];
+    //Create array of numbers
+    $numbers = array("0","1","2","3","4","5","6","7","8","9");
     //Get a random number and add it to the end
-    $newCode = $suffix . array_rand(["0","1","2","3","4","5","6","7","8","9"]);
+    $newCode = $suffix . array_rand($numbers, 1);
 
     return $newCode;
 }
@@ -40,6 +42,6 @@ function loadJSONFile($fileName = null){
     }
 
     $string = file_get_contents($fileName);
-    $json = json_decode($string);
+    $json = json_decode($string, true);
     return $json;
 }
