@@ -5,12 +5,15 @@
 //Begins the process of creating a new room from the login page
 function createNewRoom(){
 
+    let roomCode = null;
+
     //Display the loading screen
     displayLoadingScreen();
-    
+
     //TODO: 
 
     //Send the fetch request to create the room and return the room code
+    roomCode = requestRoomCode();
 
     //If the request was successful...
 
@@ -28,4 +31,9 @@ function createNewRoom(){
 //Displays the loading screen
 function displayLoadingScreen(){
     updateContent( getLoadingContent() );
+}
+
+//Submits the request for a new room code
+function requestRoomCode(){
+    callCreateAPI();
 }
