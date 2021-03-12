@@ -3,18 +3,27 @@
  
 
 //Begins the process of creating a new room from the login page
-function createNewRoom(){
-
-    let roomCode = null;
+async function createNewRoom(){
 
     //Display the loading screen
     displayLoadingScreen();
 
+    //Send the fetch request to create the room and return the room code
+    callCreateAPI()
+
+        //If the reqeust was successful
+        .then(json => {
+            l(json);
+        })
+
+        //If there was an error
+        .catch(error => {
+            l(error);
+        });
+
     //TODO: 
 
-    //Send the fetch request to create the room and return the room code
-    roomCode = requestRoomCode();
-
+    
     //If the request was successful...
 
     //...save the room code...
@@ -31,9 +40,4 @@ function createNewRoom(){
 //Displays the loading screen
 function displayLoadingScreen(){
     updateContent( getLoadingContent() );
-}
-
-//Submits the request for a new room code
-function requestRoomCode(){
-    callCreateAPI();
 }

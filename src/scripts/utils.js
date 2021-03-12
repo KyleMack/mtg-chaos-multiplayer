@@ -27,27 +27,25 @@ function getTemplate(templateName){
 
 //Calls the create API endpoint
 function callCreateAPI(){
-    let respJSON = callAPI('create.php','POST',{});
-    l(respJSON);
-    return respJSON;
+    return new Promise((resolve, reject)=>{
+        callAPI('create.php')
+            .then(json=>resolve(json));
+    });
 }
 
 //Calls the API with the given parameters
-async function callAPI(endpoint, method, body){
-        //Call the fetch reqeust and wait for a response
-        const response = await fetch(`http://kylecmackenzie.com/ChaosMultiplayer/api/v1/${endpoint}`, {
-            method: method,
-            mode: 'no-cors',
-            cache: 'no-cache',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(body)
-        });
+function callAPI(endpoint){
+    return new Promise((resolve, reject)=>{
+        
+    //Call the fetch reqeust and wait for a response
+    fetch(`http://kylecmackenzie.com/ChaosMultiplayer/api/v1/${endpoint}`, {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(data => resolve(data.json()));
 
-        //Convert the response to JSON and return
-        const json = await response.json();
-        return json;
+    });
 }
 
 //Wrapper function for console output
