@@ -27,7 +27,7 @@ function getTemplate(templateName){
 
 //Calls the create API endpoint
 function callCreateAPI(){
-    respJSON = callAPI('create.php','POST',{});
+    let respJSON = callAPI('create.php','POST',{});
     l(respJSON);
     return respJSON;
 }

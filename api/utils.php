@@ -17,6 +17,15 @@ function generateGameCode(){
     return $newCode;
 }
 
+function generatePlayerName(){
+    $playerCodes = loadPlayerCodes();
+
+    //Create a player name using two random names from the list
+    $playerName = array_rand($playerCodes["prefixs"], 1) . " " . array_rand($playerCodes["suffixs"], 1);
+
+    return $playerName;
+}
+
 //Loads the list of game codes
 function loadGameCodes(){
     //Load in the JSON file
@@ -27,7 +36,10 @@ function loadGameCodes(){
 
 //Loads the player codes and returns the array object
 function loadPlayerCodes(){
-    //TODO
+    //Load the JSON file
+    $playerCodes = loadJSONFile('../data/playerCodes.json');
+    
+    return $playerCodes;
 }
 
 //Loads the chaos rules and returns the array object
