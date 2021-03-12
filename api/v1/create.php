@@ -6,16 +6,19 @@ ini_set("display_errors","On");
 //Bring in core include file
 include_once '../coreIncludes.php';
 
-//Create DB conneciton and to Admin
-$conn = new DatabaseConn();
-include '../SetDBAdmin.php';
-
 //Generate the random code and player name
 $newCode = generateGameCode();
 $playerName = generatePlayerName();
+$playerCode = generatePlayerCode();
+
+//Create DB connection
+$conn = New ChaosDB();
+
+//Commit the player to the database
+$conn->savePlayer($playerCode, $playerName);
 
 //TODO:
-//Commit the game code and name to the database
+//Commit the game to the database
 
 //Create a assoc array for the JSON response
 $response = array(  "code"=>$newCode,

@@ -17,6 +17,7 @@ function generateGameCode(){
     return $newCode;
 }
 
+//Generates a player name randomly
 function generatePlayerName(){
     $playerCodes = loadPlayerCodes();
 
@@ -24,6 +25,15 @@ function generatePlayerName(){
     $playerName = $playerCodes["prefixs"][array_rand($playerCodes["prefixs"], 1)] . " " . $playerCodes["suffixs"][array_rand($playerCodes["suffixs"], 1)];
 
     return $playerName;
+}
+
+//Generates a player code randomly
+function generatePlayerCode(){
+    //Generate a random code
+    const $rCode = uniqid("", true);
+
+    //Get the substring
+    return substr($rCode, 7, 10);
 }
 
 //Loads the list of game codes

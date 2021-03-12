@@ -48,4 +48,3 @@ CREATE INDEX active_games_index ON active_games (game_code);
 CREATE INDEX players_index ON players (player_id);
 CREATE INDEX game_rules_index ON game_rules (active_game_code);
 CREATE INDEX rules_index ON game_rules (rule_code);
-
