@@ -21,7 +21,7 @@ function generatePlayerName(){
     $playerCodes = loadPlayerCodes();
 
     //Create a player name using two random names from the list
-    $playerName = array_rand($playerCodes["prefixs"], 1) . " " . array_rand($playerCodes["suffixs"], 1);
+    $playerName = $playerCodes["prefixs"][array_rand($playerCodes["prefixs"], 1)] . " " . $playerCodes["suffixs"][array_rand($playerCodes["suffixs"], 1)];
 
     return $playerName;
 }
