@@ -3,10 +3,12 @@
  
 
 //Begins the process of creating a new room from the login page
-async function createNewRoom(){
+function createNewRoom(){
 
-    //TODO: 
     //Display the loading screen
+    displayLoadingScreen();
+    
+    //TODO: 
 
     //Send the fetch request to create the room and return the room code
 
@@ -25,5 +27,5 @@ async function createNewRoom(){
 
 //Displays the loading screen
 function displayLoadingScreen(){
-    
+    updateContent( getLoadingContent() );
 }

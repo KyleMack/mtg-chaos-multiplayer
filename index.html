@@ -15,13 +15,12 @@
             <header>
                 <h3>Magic: The Gathering</h3>
                 <h5>Multiplayer Chaos</h5>
-                <h6>:)</h6>
             </header>
 
             <section id="login-form">
-                <button>Create Room</button>
+                <button onclick="createNewRoom();">Create Room</button>
                 <button>Join Room</button>
-                <button onclick="confetti.start(1000);">Confetti</button>
+                <button onclick="confetti.start(1000);">Confetti :)</button>
             </section>
 
             <footer>
@@ -29,6 +28,18 @@
             </footer>
         </div>
     </section>
+
+    <!-- Template for the loading screen -->
+    <template id="loading-page">
+        <div id="loading-content">
+            <h1 id="loading-message">
+                Loading...
+            </h1>
+            <section>
+                <div class="loader"></div>
+            </section>
+        </div>
+    </template>
 
     <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
     <script type="text/javascript" src="src/scripts/utils.js"></script>
