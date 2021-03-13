@@ -30,7 +30,7 @@ function generatePlayerName(){
 //Generates a player code randomly
 function generatePlayerCode(){
     //Generate a random code
-    const $rCode = uniqid("", true);
+    $rCode = uniqid("", true);
 
     //Get the substring
     return substr($rCode, 7, 10);
