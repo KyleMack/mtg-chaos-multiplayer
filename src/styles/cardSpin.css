@@ -36,12 +36,12 @@ body { font-family: sans-serif; }
 }
 
 .card__face--front {
-  background: lightblue;
-  filter: blur(2  px);
+  background: white;
+  filter: blur(4px);
 }
 
 .card__face--back {
-  background: url("./p4-back.jpg");
+  background: url("../assets/images/card_back.jpg");
   background-size: cover;
   transform: rotateY(180deg);
 }
