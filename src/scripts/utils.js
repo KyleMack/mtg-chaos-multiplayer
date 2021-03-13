@@ -4,6 +4,7 @@ const DEBUGGING = true;
 
 const CONTENT_SELECTOR = "section#content";
 const LOADING_TEMPLATE = "template#loading-page";
+const CARD_TEMPLATE    = "template#card";
 
 
 //Updates the content of the main page with the provided HTML string
@@ -16,6 +17,11 @@ function updateContent(html){
 //Gets the content for the 'Loading' page
 function getLoadingContent(){
     return getTemplate(LOADING_TEMPLATE);
+}
+
+//Gete the content for the 'Card' element
+function getCardTemplate(){
+    return getTemplate(CARD_TEMPLATE);
 }
 
 //Gets the template with the specified name

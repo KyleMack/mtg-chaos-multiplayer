@@ -41,3 +41,9 @@ async function createNewRoom(){
 function displayLoadingScreen(){
     updateContent( getLoadingContent() );
 }
+
+//Creates a spinning card element
+function createCard(){
+    //Get the card element
+    let card = getCardTemplate();
+}
