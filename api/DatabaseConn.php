@@ -8,8 +8,9 @@
  */
 class DatabaseConn{
 
-    private $address  = "localhost";
-    private $database = "chaos_db";
+    const DEBUGGING     = true;
+    private $address    = "localhost";
+    private $database   = "chaos_db";
     private $username;
     private $password;
 
@@ -317,6 +318,12 @@ class DatabaseConn{
 
         return $rowCount;
 
+    }
+
+    function log($message){
+        if(self::DEBUGGING){
+            echo "log: $message</>";
+        }
     }
 
 
