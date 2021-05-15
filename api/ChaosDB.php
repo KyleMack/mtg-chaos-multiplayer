@@ -36,7 +36,7 @@ class ChaosDB{
 
         //Select all columns
         $result = $this->conn->selectcolumns(self::T_PLAYERS, array(
-                "player_id"
+                "*"
             ));
 
         //Return the result
@@ -50,7 +50,7 @@ class ChaosDB{
 
         //Select all columns
         $result = $this->conn->selectcolumns(self::T_ACTIVEGAMES, array(
-                ""
+                "*"
             ));
 
         //Return the result
