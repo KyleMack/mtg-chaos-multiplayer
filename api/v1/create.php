@@ -15,7 +15,7 @@ $playerCode = generatePlayerCode();
 $conn = New ChaosDB();
 
 //Commit the player to the database
-$conn->savePlayer($playerCode, $playerName);
+echo $conn->savePlayer($playerCode, $playerName);
 
 //TODO:
 //Commit the game to the database

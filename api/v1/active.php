@@ -13,4 +13,5 @@ $conn = New ChaosDB();
 $players = $conn->getAllPlayers();
 
 //return the games as JSON
-return json_encode($players);
+echo "Active Players:<br/>";
+echo json_encode($players);

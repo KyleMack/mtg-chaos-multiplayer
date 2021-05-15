@@ -9,12 +9,12 @@ class ChaosDB{
     private $conn = null;
 
     //Constants for creating SQL statements
-    private const T_PLAYERS     = "players";
-    private const T_ACTIVEGAMES = "active_games";
-    private const T_GAMEPLAYERS = "game_players";
-    private const T_GAMERULES   = "game_rules";
+    const T_PLAYERS     = "players";
+    const T_ACTIVEGAMES = "active_games";
+    const T_GAMEPLAYERS = "game_players";
+    const T_GAMERULES   = "game_rules";
 
-    public __construct(){
+    public function __construct(){
         $this->loadDatabase();
     }
 
@@ -35,7 +35,7 @@ class ChaosDB{
         $this->setUser();
 
         //Select all columns
-        $result = $this->conn->selectcolumns($this->T_PLAYERS, array(
+        $result = $this->conn->selectcolumns(self::T_PLAYERS, array(
                 "*"
             ));
 
@@ -49,8 +49,9 @@ class ChaosDB{
         $this->setUser();
 
         //Select all columns
-        $result = $this->conn->selectcolumns($this->T_ACTIVEGAMES, array(
-                "*"
+        $result = $this->conn->selectcolumns(self::T_ACTIVEGAMES, array(
+                "player_id",
+                "username"
             ));
 
         //Return the result
@@ -63,7 +64,7 @@ class ChaosDB{
         $this->setAdmin();
 
         //Call the insert function
-        $insertID = $this->conn->insertRecord($this->T_PLAYERS, array(
+        $insertID = $this->conn->insertRecord(self::T_PLAYERS, array(
                 "player_id"=>$playerID,
                 "username"=>$username
             ));
@@ -81,7 +82,7 @@ class ChaosDB{
         $gameExpiryTime = new DateTime();
 
         //Call the insert function
-        $insertID = $this->conn->insertRecord($this->T_ACTIVEGAMES, array(
+        $insertID = $this->conn->insertRecord(self::T_ACTIVEGAMES, array(
                 "game_code"=>$gameCode,
                 "game_secret"=>$gameSecret,
                 "owner_id"=>$playerID,
