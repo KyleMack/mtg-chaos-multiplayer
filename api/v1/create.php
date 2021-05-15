@@ -7,7 +7,7 @@ ini_set("display_errors","On");
 include_once '../coreIncludes.php';
 
 //Generate the random code and player name
-$newCode = generateGameCode();
+$gameCode = generateGameCode();
 $playerName = generatePlayerName();
 $playerCode = generatePlayerCode();
 
@@ -15,13 +15,13 @@ $playerCode = generatePlayerCode();
 $conn = New ChaosDB();
 
 //Commit the player to the database
-echo $conn->savePlayer($playerCode, $playerName);
+$conn->savePlayer($playerCode, $playerName);
 
-//TODO:
 //Commit the game to the database
+$conn->saveGame($gameCode, $playerCode);
 
 //Create a assoc array for the JSON response
-$response = array(  "code"=>$newCode,
+$response = array(  "game code"=>$gameCode,
                     "success"=>"true",
                     "playerName"=>$playerName);
 

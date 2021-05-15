@@ -36,7 +36,7 @@ class ChaosDB{
 
         //Select all columns
         $result = $this->conn->selectcolumns(self::T_PLAYERS, array(
-                "*"
+                "player_id"
             ));
 
         //Return the result
@@ -50,8 +50,7 @@ class ChaosDB{
 
         //Select all columns
         $result = $this->conn->selectcolumns(self::T_ACTIVEGAMES, array(
-                "player_id",
-                "username"
+                ""
             ));
 
         //Return the result
@@ -74,7 +73,7 @@ class ChaosDB{
     }
 
     //Creates a new record in the games table
-    public function saveGame($gameCode, $playerCode, $gameSecret){
+    public function saveGame($gameCode, $playerCode){
         //Set the user to admin
         $this->setAdmin();
 
@@ -84,7 +83,6 @@ class ChaosDB{
         //Call the insert function
         $insertID = $this->conn->insertRecord(self::T_ACTIVEGAMES, array(
                 "game_code"=>$gameCode,
-                "game_secret"=>$gameSecret,
                 "owner_id"=>$playerID,
                 "game_expiry_time"=>$gameExpiryTime
             ));
