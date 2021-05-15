@@ -78,12 +78,12 @@ class ChaosDB{
         $this->setAdmin();
 
         //Determine the game expiry time
-        $gameExpiryTime = new DateTime();
+        $gameExpiryTime = (new DateTime())->format('Y-m-d H:i:s');
 
         //Call the insert function
         $insertID = $this->conn->insertRecord(self::T_ACTIVEGAMES, array(
                 "game_code"=>$gameCode,
-                "owner_id"=>$playerID,
+                "owner_id"=>$playerCode,
                 "game_expiry_time"=>$gameExpiryTime
             ));
 
