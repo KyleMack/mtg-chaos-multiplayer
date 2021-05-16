@@ -65,10 +65,3 @@ function loadJSONFile($fileName = null){
     $json = json_decode($string, true);
     return $json;
 }
-
-//Write output if debugging is enabled 
-function DEBUG($text){
-    if( $DEBUGGING ){
-        echo $text;
-    }
-}
