@@ -154,7 +154,7 @@ class DatabaseConn{
         $stmt = $conn->prepare("INSERT INTO $tableName ($keyString) VALUES ($valueString)");
 
         //DEBUGGING
-        log("INSERT INTO $tableName ($keyString) VALUES ($valueString)");
+        $this->debug("INSERT INTO $tableName ($keyString) VALUES ($valueString)");
 
         // Execute the statement
         $stmt->execute($stmtBindings);
@@ -251,7 +251,7 @@ class DatabaseConn{
         $stmt = $conn->prepare("SELECT $selectColumns FROM $table");
 
         //DEBUGGING
-        log("SELECT $selectColumns FROM $table");
+        $this->debug("SELECT $selectColumns FROM $table");
 
         // execute the statement
         $stmt->execute();
@@ -326,7 +326,7 @@ class DatabaseConn{
 
     }
 
-    function log($message){
+    function debug($message){
         if(self::DEBUGGING){
             echo "log: " . $message . "<br/>";
         }
