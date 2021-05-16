@@ -1,8 +1,8 @@
 
-DROP TABLE players CASCADE;
-DROP TABLE active_games CASCADE;
-DROP TABLE game_players CASCADE;
-DROP TABLE game_rules CASCADE;
+DROP TABLE IF EXISTS players CASCADE;
+DROP TABLE IF EXISTS active_games CASCADE;
+DROP TABLE IF EXISTS game_players CASCADE;
+DROP TABLE IF EXISTS game_rules CASCADE;
 
 CREATE TABLE players(
     player_id         CHAR(10) NOT NULL,

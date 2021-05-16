@@ -1,14 +1,11 @@
 DROP DATABASE IF EXISTS chaos_db;
-DROP USER chaos_user CASCADE;
-DROP USER chaos_admin CASCADE;
-
-CREATE USER chaos_user;
-CREATE USER chaos_admin;
-
-ALTER USER chaos_user WITH PASSWORD 'snowwhale420hotdog';
-ALTER USER chaos_admin WITH PASSWORD 'hotdigcatwallbearscoop';
+DROP USER chaos_user;
+DROP USER chaos_admin;
 
 CREATE DATABASE chaos_db;
 
+CREATE USER chaos_user WITH PASSWORD 'snowwhale420hotdog';
+CREATE USER chaos_admin WITH PASSWORD 'hotdigcatwallbearscoop';
+
 GRANT SELECT ON ALL TABLES IN SCHEMA chaos_db TO chaos_user;
-GRANT ALL ON ALL TABLES IN SCHEMA chaos_db TO chaos_admin;
+GRANT ALL PRIVILEGES ON chaos_db TO chaos_admin;
