@@ -15,7 +15,6 @@ CREATE TABLE players(
 
 CREATE TABLE active_games(
     game_code         CHAR(5) NOT NULL UNIQUE,
-    game_secret       CHAR(45) NOT NULL UNIQUE,
     owner_id          CHAR(10) NOT NULL,
     game_expiry_time  TIMESTAMP NOT NULL,
 
