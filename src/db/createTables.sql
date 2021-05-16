@@ -1,8 +1,8 @@
 
-DROP TABLE IF EXISTS players CASCADE;
-DROP TABLE IF EXISTS active_games CASCADE;
-DROP TABLE IF EXISTS game_players CASCADE;
-DROP TABLE IF EXISTS game_rules CASCADE;
+DROP TABLE IF EXISTS players;
+DROP TABLE IF EXISTS active_games;
+DROP TABLE IF EXISTS game_players;
+DROP TABLE IF EXISTS game_rules;
 
 \c chaos_db;
 
