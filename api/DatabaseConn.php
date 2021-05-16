@@ -60,6 +60,8 @@ class DatabaseConn{
             $conn = new PDO($dsn, $this->username, $this->password);
         } catch(PDOException $e){
             $conn = null;
+            var_dump($e);
+            exit();
         }
 
         return $conn;
