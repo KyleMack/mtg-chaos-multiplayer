@@ -155,7 +155,7 @@ class DatabaseConn{
 
         //DEBUGGING
         $this->debug("INSERT INTO $tableName ($keyString) VALUES ($valueString)");
-        $this->debug($stmtBindings);
+        var_dump($stmtBindings);
 
         // Execute the statement
         $stmt->execute($stmtBindings);
