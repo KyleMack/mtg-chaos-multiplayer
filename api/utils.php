@@ -68,7 +68,7 @@ function loadJSONFile($fileName = null){
 
 //Write output if debugging is enabled 
 function DEBUG($text){
-    if( isset($DEBUGGING) &&  $DEBUGGING ){
+    if( $DEBUGGING ){
         echo $text;
     }
 }
