@@ -1,5 +1,8 @@
 <?php
 
+//Set to true to allow debugging
+$DEBUGGING = true;
+
 error_reporting(E_ALL);
 ini_set("display_errors","On");
 

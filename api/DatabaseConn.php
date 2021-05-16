@@ -153,6 +153,9 @@ class DatabaseConn{
         // Prepare the statement
         $stmt = $conn->prepare("INSERT INTO $tableName ($keyString) VALUES ($valueString)");
 
+        //DEBUGGING
+        DEBUG("INSERT INTO $tableName ($keyString) VALUES ($valueString)");
+
         // Execute the statement
         $stmt->execute($stmtBindings);
 
@@ -246,6 +249,9 @@ class DatabaseConn{
 
         // Prepare the statement
         $stmt = $conn->prepare("SELECT $selectColumns FROM $table");
+
+        //DEBUGGING
+        DEBUG("SELECT $selectColumns FROM $table");
 
         // execute the statement
         $stmt->execute();
