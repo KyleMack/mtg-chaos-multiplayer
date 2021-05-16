@@ -328,7 +328,7 @@ class DatabaseConn{
 
     function log($message){
         if(self::DEBUGGING){
-            echo "log: $message</>";
+            echo "log: " . $message . "<br/>";
         }
     }
 
