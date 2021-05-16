@@ -4,5 +4,7 @@ DROP USER chaos_admin;
 
 CREATE DATABASE chaos_db;
 
+\c chaos_db;
+
 CREATE USER chaos_user WITH PASSWORD 'snowwhale420hotdog';
 CREATE USER chaos_admin WITH PASSWORD 'hotdigcatwallbearscoop';
