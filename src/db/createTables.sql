@@ -4,6 +4,8 @@ DROP TABLE IF EXISTS active_games CASCADE;
 DROP TABLE IF EXISTS game_players CASCADE;
 DROP TABLE IF EXISTS game_rules CASCADE;
 
+\c chaos_db;
+
 CREATE TABLE players(
     player_id         CHAR(10) NOT NULL,
     username          VARCHAR(25) NOT NULL,
