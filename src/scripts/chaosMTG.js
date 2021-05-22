@@ -14,7 +14,7 @@ async function createNewRoom(){
         //If the reqeust was successful
         .then(json => {
             l(json);
-            
+
             displaySuccessMessage(json["gameCode"], json["playerName"]);
             setPlayerId(json["playerId"]);
             setPlayerName(json["playerName"]);
@@ -59,4 +59,9 @@ function displayErrorMessage(){
 function createCard(){
     //Get the card element
     let card = getCardTemplate();
+}
+
+//Displays the controls page once the game is loaded
+function displayControls(){
+    updateContent( getControlsContent() );
 }

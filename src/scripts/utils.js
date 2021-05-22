@@ -2,9 +2,10 @@
 
 const DEBUGGING = true;
 
-const CONTENT_SELECTOR = "section#content";
-const LOADING_TEMPLATE = "template#loading-page";
-const CARD_TEMPLATE    = "template#card";
+const CONTENT_SELECTOR  = "section#content";
+const LOADING_TEMPLATE  = "template#loading-page";
+const CARD_TEMPLATE     = "template#card";
+const CONTROLS_TEMPLATE = "template#interface" 
 
 const STORAGE_GAME_CODE      = "MTG_CHAOS_GAME_CODE";
 const STORAGE_PLAYER_ID      = "MTG_CHAOS_PLAYER_ID";
@@ -45,6 +46,10 @@ function updateContent(html){
 //Gets the content for the 'Loading' page
 function getLoadingContent(){
     return getTemplate(LOADING_TEMPLATE);
+}
+
+function getControlsContent(){
+    return getTemplate(CONTROLS_TEMPLATE);
 }
 
 //Gete the content for the 'Card' element
