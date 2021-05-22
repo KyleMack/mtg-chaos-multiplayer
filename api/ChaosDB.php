@@ -166,7 +166,7 @@ class ChaosDB{
             return array();
         }
 
-        $conn->setUser();
+        $this->setUser();
 
         //Create the query string for the select
         $queryString = "SELECT p.username FROM game_players gp INNER JOIN players p ON gp.player_id=p.player_id WHERE gp.active_game_code='$gameCode'";
