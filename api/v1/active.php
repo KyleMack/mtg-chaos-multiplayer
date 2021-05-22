@@ -27,3 +27,12 @@ echo "Active Players:<br/>";
 
 echo json_encode($players);
 
+echo "<br/>";
+
+//Select all games lists
+$players = $conn->getAllPlayersInGames();
+
+//return the players as JSON
+echo "Active Players In Games:<br/>";
+
+echo json_encode($players);

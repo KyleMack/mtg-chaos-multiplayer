@@ -57,6 +57,20 @@ class ChaosDB{
         return $result;
     }
 
+    //Returns an array with all players linked to a game
+    public function getAllPlayersInGames(){
+        //Set the user to default
+        $this->setUser();
+
+        //Select all columns
+        $result = $this->conn->selectcolumns(self::T_GAMEPLAYERS, array(
+                "*"
+            ));
+
+        //Return the result
+        return $result;
+    }
+
     //Saves the given player in the database
     public function savePlayer($playerID, $username){
         //Set the user to admin
@@ -89,6 +103,21 @@ class ChaosDB{
 
         //Return the insert id and expiry time
         return array("insertID"=>$insertID, "expiryTime"=>$gameExpiryTime);
+    }
+
+    //Creates a new record in the game_players table
+    public function addPlayerToGame($gameCode, $playerCode){
+        //Set the user to admin
+        $this->setAdmin();
+
+        //Call the insert function
+        $insertID = $this->conn->insertRecord(self::T_GAMEPLAYERS, array(
+                "player_id"=>$playerID,
+                "active_game_code"=>$gameCode
+            ));
+
+        //Return the insert ID
+        return $insertID;
     }
 
 }

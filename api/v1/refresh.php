@@ -4,7 +4,7 @@
 include_once '../coreIncludes.php';
 
 $T_PLAYERS     = "players";
-$T_ACTIVEGAMES = "acTive_games";
+$T_ACTIVEGAMES = "active_games";
 $T_GAMEPLAYERS = "game_players";
 $T_GAMERULES   = "game_rules";
 
@@ -25,7 +25,5 @@ echo $conn->clearTable($T_ACTIVEGAMES);
 
 echo "<BR/>CLEARING PLAYERS... ";
 echo $conn->clearTable($T_PLAYERS);
-
-
 
 ?>

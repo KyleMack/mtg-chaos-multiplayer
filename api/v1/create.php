@@ -23,6 +23,9 @@ $conn->savePlayer($playerCode, $playerName);
 //Commit the game to the database
 $conn->saveGame($gameCode, $playerCode);
 
+//Create the linking record between the player and the game
+$conn->addPlayerToGame($gameCode, $playerCode);
+
 //Create a assoc array for the JSON response
 $response = array(  "game code"=>$gameCode,
                     "success"=>"true",
