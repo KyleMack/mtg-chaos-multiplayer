@@ -22,6 +22,9 @@ $conn = New ChaosDB();
 //Check that the passed game code exists in the database
 $doesExist = $conn->checkGameExists($game_code);
 
+echo $doesExist;
+echo "<br/>";
+
 //If the game does not exist, return an error
 if( !$doesExist ){
     echo json_encode( array("success"=>false, "message"=>"Error: room $game_code does not exist") );
