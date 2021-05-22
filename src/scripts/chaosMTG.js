@@ -21,6 +21,7 @@ async function createNewRoom(){
             setGameCode(json["gameCode"]);
 
             displayControls();
+            updateScreen();
 
         })
 
@@ -59,4 +60,18 @@ function createCard(){
 //Displays the controls page once the game is loaded
 function displayControls(){
     updateContent( getControlsContent() );
+}
+
+//Updates all information on the screen with what is stored in the window.chaos object
+function updateScreen(){
+
+    //Display Room Code
+    document.querySelector("#room-code-display").innerHTML = getGameCode();
+
+    //Display Active Players
+    document.querySelector("#room-players-display").innerHTML = createHTMLList( getActivePlayers() );
+
+    //Display Active Rules
+    document.querySelector("#room-rules-display").innerHTML = createHTMLList( getActiveRules() );
+
 }

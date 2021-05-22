@@ -23,6 +23,7 @@ function initializeData(){
     _c.playerId = null;     //Unique ID of the player
     _c.playerName = null;   //Name of the player
     _c.gameCode = null;     //Unique ID of the game
+    _c.activePlayers = [];  //List of currently active players
     _c.activeRules = [];    //List of currently active rules
 
 }
@@ -35,6 +36,12 @@ function setPlayerName(playerName){ window.chaos.playerName = playerName; }
 
 function getGameCode(){ return window.chaos.gameCode; }
 function setGameCode(gameCode){ window.chaos.gameCode = gameCode; }
+
+function getActivePlayers(){ return window.chaos.activePlayers; }
+function setActivePlayers(activePlayers){ window.chaos.activePlayers = activePlayers; }
+
+function getActiveRules(){ return window.chaos.activeRules; }
+function setActiveRules(activeRules){ window.chaos.activeRules = activeRules; }
 
 //Updates the content of the main page with the provided HTML string
 function updateContent(html){
@@ -64,6 +71,23 @@ function getTemplate(templateName){
     return copy;  
 }
 
+//Accepts a list of items and returns a string of <li> items
+function createHTMLList(items,itemClass = ""){
+
+    let html = "";
+
+    //If there are no items, return
+    if(items.length === 0){ return html; }
+
+    //For each item, append <li>item</li>
+    for(let i = 0; i < items.length; i++){
+        html += `<li class="${itemClass}">${items[i]}</li>`;
+    }
+
+    return html;
+
+}
+
 //Calls the create API endpoint
 function callCreateAPI(){
     return new Promise((resolve, reject)=>{
@@ -89,8 +113,6 @@ function callAPI(endpoint){
 
 //Wrapper function for console output
 function l(o){if(DEBUGGING){console.log(o);}}
-
-
 
 
 //Initialize data
