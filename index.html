@@ -51,8 +51,9 @@
     <template id="join-room">
         <div id="join-room-interface">
             <h3>Enter your room code</h3>
+            <p id="error-message"></p>
             <input id="room-code-input" name="roomCode" type="text" placeholder="Room Code">
-            <button>Join Room</button>
+            <button onclick="joinRoom();">Join Room</button>
         </div>
     </template>
 

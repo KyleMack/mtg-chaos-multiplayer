@@ -34,6 +34,11 @@ async function createNewRoom(){
 
 }
 
+//Joins a room using the inputted room code 
+async function joinRoom(){
+
+}
+
 //Displays the loading screen
 function displayLoadingScreen(){
     updateContent( getLoadingContent() );
