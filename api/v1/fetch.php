@@ -29,7 +29,7 @@ if( !$doesExist ){
 }
 
 //Pull in a list of all active players
-$activePlayers - $conn->getPlayersInGame($game_code);
+$activePlayers = $conn->getPlayersInGame($game_code);
 
 var_dump( $activePlayers );
 
