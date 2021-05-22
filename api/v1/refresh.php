@@ -28,13 +28,15 @@ $conn->dropTable($T_GAMERULES;
 echo "CREATING TABLES...<BR/>";
 
 echo "CREATING PLAYERS...<BR/>";
-$conn->createTable($T_PLAYERS);
+$conn->clearTable($T_PLAYERS);
 
 echo "CREATING GAMES...<BR/>";
-$conn->createTable($T_ACTIVEGAMES);
+$conn->clearTable($T_ACTIVEGAMES);
 
 echo "CREATING PLAYERS LIST...<BR/>";
-$conn->createTable($T_GAMEPLAYERS);
+$conn->clearTable($T_GAMEPLAYERS);
 
 echo "CREATING RULES LIST...<BR/>";
-$conn->createTable($T_GAMERULES;
+$conn->clearTable($T_GAMERULES;
+
+?>

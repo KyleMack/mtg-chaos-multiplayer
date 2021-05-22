@@ -112,6 +112,29 @@ class DatabaseConn{
         return $executed;
 
     }
+    
+    /**
+     * Delets all entries in a table in the database with the given name
+     *
+     * @param string $tableName The name of the table to drop
+     * @return int Returns 0 if the command was executed properly
+     */
+    
+    function clearTable($tableName){
+        // Get the connection
+        $conn = $this->getAdminConnection();
+
+        // Create the query string
+        $DROP_TABLE_SQL = "DELETE FROM $tableName WHERE *";
+
+        // Execute the query
+        $executed = $conn->exec($DROP_TABLE_SQL);
+
+        // Close the connection and return the result
+        $conn = null;
+        return $executed;
+
+    }
 
     /**
      * Inserts a new record into the database
