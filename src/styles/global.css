@@ -86,6 +86,10 @@ section#content > div{
     float: left;
 }
 
+#play-area ul{
+    list-style: none;
+}
+
 
 #play-area #game-info{
     background-color: lightblue;
