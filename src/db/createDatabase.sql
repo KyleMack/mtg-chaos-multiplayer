@@ -8,9 +8,6 @@ CREATE DATABASE chaos_db;
 CREATE ROLE chaos_readonly;
 CREATE ROLE chaos_readwrite;
 
-CREATE CONNECT ON DATABASE chaos_db TO chaos_readonly;
-CREATE CONNECT ON DATABASE chaos_db TO chaos_readwrite;
-
 \c chaos_db;
 
 GRANT USAGE ON SCHEMA public TO chaos_readonly;
