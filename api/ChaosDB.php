@@ -171,7 +171,7 @@ class ChaosDB{
         //Create the query string for the select
         $queryString = "SELECT p.username FROM game_players gp INNER JOIN players p ON gp.player_id=p.player_id WHERE gp.active_game_code='$gameCode'";
 
-        $results = $conn->queryRaw($queryString);
+        $results = $this->conn->queryRaw($queryString);
 
         return $results;
 
