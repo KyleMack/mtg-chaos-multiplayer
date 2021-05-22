@@ -1,12 +1,17 @@
 <?php
 
 //Check that the required parameters are set
-if( !isset( $_REQUEST["room_code"] ) || empty( $_REQUEST["room_code"] ) ){
+if( !isset( $_REQUEST["room_code"] ) ){
     echo json_encode( array("success"=>false, "message"=>"Error: room_code is a required parameter") );
     exit(0);
 }
 
 const game_code = $_REQUEST["room_code"];
+
+if( empty( $game_code ) ){
+    echo json_encode( array("success"=>false, "message"=>"Error: passed room code cannot be empty") );
+    exit(0);
+}
 
 //Bring in core include file
 include_once '../coreIncludes.php';
