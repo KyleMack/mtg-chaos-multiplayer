@@ -20,12 +20,7 @@ async function createNewRoom(){
             setPlayerName(json["playerName"]);
             setGameCode(json["gameCode"]);
 
-            //TODO: 
-    
-            //If the request was successful...
-
-            //...and display the main window
-
+            displayControls();
 
         })
 
