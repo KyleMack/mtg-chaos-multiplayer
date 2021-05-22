@@ -82,8 +82,11 @@ function callAPI(endpoint){
     });
 }
 
-
-
-
 //Wrapper function for console output
 function l(o){if(DEBUGGING){console.log(o);}}
+
+
+
+
+//Initialize data
+initializeData();
