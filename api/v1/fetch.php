@@ -6,7 +6,7 @@ if( !isset( $_REQUEST["room_code"] ) ){
     exit(0);
 }
 
-const game_code = $_REQUEST["room_code"];
+$game_code = $_REQUEST["room_code"];
 
 if( empty( $game_code ) ){
     echo json_encode( array("success"=>false, "message"=>"Error: passed room code cannot be empty") );
