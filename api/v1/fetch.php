@@ -46,3 +46,5 @@ var_dump( $activePlayers );
 $response = array();
 
 $response["roomCode"] = $game_code;
+
+echo json_encode( $response );
