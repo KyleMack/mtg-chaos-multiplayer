@@ -32,8 +32,6 @@ if( !$doesExist ){
 $activePlayers = $conn->getPlayersInGame($game_code);
 
 //TODO: Get the list of active rules
-//TODO: Return
-
 
 //Create the array to hold the response
 $response = array();

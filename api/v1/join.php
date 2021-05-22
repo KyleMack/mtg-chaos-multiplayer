@@ -28,8 +28,35 @@ if( !$doesExist ){
     exit(0);
 }
 
+//Generate player Id's until a unique one is found
+$uniqueId = false;
 
-//TODO: Create User Code and UserName
-//TODO: Save user information to database
-//TODO: Add user to the room list
-//TODO: Return the results
+$playerId = null;
+$playerName = generatePlayerName();
+
+//Generate the player code
+while( !$uniqueId ){
+    $playerId = generatePlayerId();
+    if( !$conn->checkPlayerExists($playerId) ){
+        $uniqueId = true;
+    }
+
+}
+
+//Commit the player to the database
+$conn->savePlayer($playerId, $playerName);
+
+//Create the linking record between the player and the game
+$conn->addPlayerToGame($game_code, $playerId);
+
+//TODO: Get the list of active rules
+
+//Create the response array
+$response = array();
+$response["playerId"] = $playerId;
+$response["playerName"] = $playerName;
+$response["gameCode"] = $game_code;
+$response["activePlayers"] = $conn->getPlayersInGame($game_code);
+$response["activeRules"] = null;
+
+echo json_encode( $response );

@@ -49,6 +49,14 @@ section#content > div{
     color: white;
 } 
 
+/******************** JOIN ROOM PAGE *****************************/
+
+#join-room-interface{       height: 100vh;  width: 100vw; }
+#join-room-interface h3{    height: 40%;    width: 100%;}
+#join-room-interface input{ height: 25%;    width: 100%;}
+#join-room-interface button{height: 25%;    width: 100%;}
+
+
 /******************** LOAGING PAGE *****************************/
 
 #loading-content *{

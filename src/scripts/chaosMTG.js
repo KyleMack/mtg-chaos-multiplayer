@@ -39,6 +39,11 @@ function displayLoadingScreen(){
     updateContent( getLoadingContent() );
 }
 
+//Displays the 'Join Room' input screen
+function displayJoinRoomScreen(){
+    updateContent( getJoinRoomContent() );
+}
+
 //Updates the loading screen to display a success message
 function displaySuccessMessage(gameCode, playerName){
     document.querySelector("#loading-message").innerHTML = "Finalizing Game...";

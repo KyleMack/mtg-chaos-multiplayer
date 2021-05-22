@@ -149,6 +149,15 @@ class ChaosDB{
         return $insertID;
     }
 
+    //Returns true if the passed player ID exists in the database
+    public function checkPlayerExists($playerId){
+        $this->setUser();
+
+        $exists = $this->conn->recordExists(self::T_PLAYERS, "player_id", $playerId);
+
+        return $exists;
+    }
+
     //Returns true if the passed game code is active in the database
     public function checkGameExists($gameCode){
         //Set the user to guest

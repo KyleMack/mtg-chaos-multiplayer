@@ -5,7 +5,8 @@ const DEBUGGING = true;
 const CONTENT_SELECTOR  = "section#content";
 const LOADING_TEMPLATE  = "template#loading-page";
 const CARD_TEMPLATE     = "template#card";
-const CONTROLS_TEMPLATE = "template#interface" 
+const CONTROLS_TEMPLATE = "template#interface";
+const JOIN_TEMPLATE     = "template#join-room"; 
 
 const STORAGE_GAME_CODE      = "MTG_CHAOS_GAME_CODE";
 const STORAGE_PLAYER_ID      = "MTG_CHAOS_PLAYER_ID";
@@ -53,6 +54,11 @@ function updateContent(html){
 //Gets the content for the 'Loading' page
 function getLoadingContent(){
     return getTemplate(LOADING_TEMPLATE);
+}
+
+//Gets the content for the 'Join Room' page
+function getjoinRoomContent(){
+    return getTemplate(JOIN_TEMPLATE);
 }
 
 function getControlsContent(){
