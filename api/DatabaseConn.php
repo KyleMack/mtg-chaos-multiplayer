@@ -210,7 +210,7 @@ class DatabaseConn{
         // Get the results
         $results = $stmt->fetchAll();
 
-        $this->debug($results);
+        var_dump($results);
 
         if(!result){
             return false;
