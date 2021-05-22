@@ -84,6 +84,18 @@ class ChaosDB{
                 "*"
             ));
 
+            
+        $output = [];
+
+        foreach ($result as $record){
+            $gameList = []; 
+            array_push($gameList, $record["player_id"], $record["active_game_code"]);
+            array_push($output, $gameList);
+        }
+
+        //Return the result
+        return $output;
+
         //Return the result
         return $result;
     }
