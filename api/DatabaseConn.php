@@ -122,20 +122,15 @@ class DatabaseConn{
     
     function clearTable($tableName){
 
-        $this->debug("TEST 1");
-
         // Get the connection
         $conn = $this->getAdminConnection();
 
-        $this->debug("TEST 2");
         // Create the query string
         $DROP_TABLE_SQL = "DELETE FROM $tableName";
 
-        $this->debug("TEST 3");
         // Execute the query
         $executed = $conn->exec($DROP_TABLE_SQL);
 
-        $this->debug("TEST 4");
         // Close the connection and return the result
         $conn = null;
         return $executed;
