@@ -13,16 +13,18 @@ $conn = New DatabaseConn();
 
 echo "CLEARING TABLES...<BR/>";
 
-echo "CLEARING PLAYERS...<BR/>";
-$conn->clearTable($T_PLAYERS);
+echo "<BR/>CLEARING RULES LIST...";
+echo $conn->clearTable($T_GAMERULES);
 
-echo "CLEARING GAMES...<BR/>";
-$conn->clearTable($T_ACTIVEGAMES);
+echo "<BR/>CLEARING PLAYERS LIST...";
+echo $conn->clearTable($T_GAMEPLAYERS);
 
-echo "CLEARING PLAYERS LIST...<BR/>";
-$conn->clearTable($T_GAMEPLAYERS);
+echo "<BR/>CLEARING GAMES... ";
+echo $conn->clearTable($T_ACTIVEGAMES);
 
-echo "CLEARING RULES LIST...<BR/>";
-$conn->clearTable($T_GAMERULES);
+echo "<BR/>CLEARING PLAYERS... ";
+echo $conn->clearTable($T_PLAYERS);
+
+
 
 ?>

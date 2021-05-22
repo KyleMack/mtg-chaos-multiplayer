@@ -125,7 +125,7 @@ class DatabaseConn{
         $conn = $this->getAdminConnection();
 
         // Create the query string
-        $DROP_TABLE_SQL = "DELETE FROM $tableName WHERE *";
+        $DROP_TABLE_SQL = "DELETE FROM $tableName";
 
         // Execute the query
         $executed = $conn->exec($DROP_TABLE_SQL);
