@@ -173,7 +173,13 @@ class ChaosDB{
 
         $results = $this->conn->queryRaw($queryString);
 
-        return $results;
+        $output = array();
+        //Remove extra records and only send back the names
+        foreach ($results as $record){
+            array_push($output, $record["username"]);
+        }
+
+        return $output;
 
     }
 

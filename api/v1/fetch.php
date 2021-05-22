@@ -31,9 +31,6 @@ if( !$doesExist ){
 //Pull in a list of all active players
 $activePlayers = $conn->getPlayersInGame($game_code);
 
-var_dump( $activePlayers );
-
-//TODO: Get the list of active players
 //TODO: Get the list of active rules
 //TODO: Format the list to be json friendly
 //TODO: Return
@@ -46,5 +43,6 @@ var_dump( $activePlayers );
 $response = array();
 
 $response["roomCode"] = $game_code;
+$responst["activePlayers"] = $activePlayers;
 
 echo json_encode( $response );
