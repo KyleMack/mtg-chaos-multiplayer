@@ -77,7 +77,8 @@ class DatabaseConn{
     function createTable($tableName, $tableColumns){
 
         // Get the connection
-        $conn = $this->getAdminConnection();
+        $conn = $this->getUserConnection();
+
 
         // Create the query string
         $createTableSQL = "CREATE TABLE $tableName ($tableColumns)";
@@ -99,7 +100,8 @@ class DatabaseConn{
     function dropTable($tableName){
 
         // Get the connection
-        $conn = $this->getAdminConnection();
+        $conn = $this->getUserConnection();
+
 
         // Create the query string
         $DROP_TABLE_SQL = "DROP TABLE IF EXISTS $tableName";
@@ -123,7 +125,7 @@ class DatabaseConn{
     function clearTable($tableName){
 
         // Get the connection
-        $conn = $this->getAdminConnection();
+        $conn = $this->getUserConnection();
 
         // Create the query string
         $DROP_TABLE_SQL = "DELETE FROM $tableName";
