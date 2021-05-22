@@ -28,10 +28,21 @@ if( !$doesExist ){
     exit(0);
 }
 
-echo "Room Exists";
+//Pull in a list of all active players
+$activePlayers - $conn->getPlayersInGame($game_code);
 
-//TODO: Make sure that the passed game code exists and is valid
+var_dump( $activePlayers );
+
 //TODO: Get the list of active players
 //TODO: Get the list of active rules
 //TODO: Format the list to be json friendly
 //TODO: Return
+
+
+
+
+
+//Create the array to hold the response
+$response = array();
+
+$response["roomCode"] = $game_code;

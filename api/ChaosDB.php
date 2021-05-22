@@ -160,4 +160,19 @@ class ChaosDB{
         return $exists;
     }
 
+    //Returns the name of all players in the passed game
+    public function getPlayersInGame($gameCode){
+        if( empty($gameCode) ){
+            return array();
+        }
+
+        //Create the query string for the select
+        $queryString = "SELECT p.username FROM game_players gp INNER JOIN players p ON gp.player_id=p.player_id WHERE gp.active_game_code='$gameCode'";
+
+        $results = $conn->queryRaw($queryString);
+
+        return $results;
+
+    }
+
 }
