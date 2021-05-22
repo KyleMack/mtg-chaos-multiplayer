@@ -280,9 +280,6 @@ class DatabaseConn{
         // Prepare the statement
         $stmt = $conn->prepare("SELECT $selectColumns FROM $table");
 
-        //DEBUGGING
-        $this->debug("SELECT $selectColumns FROM $table");
-
         // execute the statement
         $stmt->execute();
 
