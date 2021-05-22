@@ -181,11 +181,6 @@ class DatabaseConn{
         // Prepare the statement
         $stmt = $conn->prepare("INSERT INTO $tableName ($keyString) VALUES ($valueString)");
 
-        //DEBUGGING
-        $this->debug("INSERT INTO $tableName ($keyString) VALUES ($valueString)");
-        var_dump($stmtBindings);
-        $this->debug("<br/>");
-
         // Execute the statement
         $stmt->execute($stmtBindings);
 
