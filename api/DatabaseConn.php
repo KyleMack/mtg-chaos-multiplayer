@@ -210,9 +210,7 @@ class DatabaseConn{
         // Get the results
         $results = $stmt->fetchAll();
 
-        var_dump($results);
-
-        if(!result){
+        if( empty($results) ){
             return false;
         } else {
             return true;
