@@ -1,7 +1,7 @@
 <?php
 
 //Check that the required parameters are set
-if( !isset( $_REQUEST["room_code"] ) && empty( $_REQUEST["room_code"] ) ){
+if( !isset( $_REQUEST["room_code"] ) || empty( $_REQUEST["room_code"] ) ){
     echo json_encode( array("success"=>false, "message"=>"Error: room_code is a required parameter") );
     exit(0);
 }
