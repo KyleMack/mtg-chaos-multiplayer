@@ -30,10 +30,10 @@ function getPlayerId(){ return window.chaos.playerId; }
 function setPlayerId(playerId){ window.chaos.playerId = playerId; }
 
 function getPlayerName(){ return window.chaos.playerName; }
-function setPlayerName(playerName){ window.chaos.playerId = playerName; }
+function setPlayerName(playerName){ window.chaos.playerName = playerName; }
 
 function getGameCode(){ return window.chaos.gameCode; }
-function setGameCode(gameCode){ window.chaos.playerId = gameCode; }
+function setGameCode(gameCode){ window.chaos.gameCode = gameCode; }
 
 //Updates the content of the main page with the provided HTML string
 function updateContent(html){
