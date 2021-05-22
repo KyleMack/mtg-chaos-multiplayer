@@ -39,8 +39,16 @@ class ChaosDB{
                 "*"
             ));
 
+        $output = [];
+
+        foreach ($result as $record){
+            $player = []; 
+            array_push($player, $record["player_id"], $record["username"]);
+            array_push($output, $player);
+        }
+
         //Return the result
-        return $result;
+        return $output;
     }
 
     //Returns an array with all active game information
@@ -53,8 +61,17 @@ class ChaosDB{
                 "*"
             ));
 
+        $output = [];
+
+        foreach ($result as $record){
+            $game = []; 
+            array_push($game, $record["game_code"], $record["owner_id"]);
+            array_push($output, $game);
+        }
+
         //Return the result
-        return $result;
+        return $output;
+
     }
 
     //Returns an array with all players linked to a game
@@ -112,7 +129,7 @@ class ChaosDB{
 
         //Call the insert function
         $insertID = $this->conn->insertRecord(self::T_GAMEPLAYERS, array(
-                "player_id"=>$playerID,
+                "player_id"=>$playerCode,
                 "active_game_code"=>$gameCode
             ));
 
