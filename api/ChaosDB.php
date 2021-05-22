@@ -149,4 +149,15 @@ class ChaosDB{
         return $insertID;
     }
 
+    //Returns true if the passed game code is active in the database
+    public function checkGameExists($gameCode){
+        //Set the user to guest
+        $this->setUser();
+
+        //Select from the database using the room code
+        $exists = $this->conn->recordExists(self::T_ACTIVEGAMES, "game_code", $gameCode);
+
+        return $exists;
+    }
+
 }

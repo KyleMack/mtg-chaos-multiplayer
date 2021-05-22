@@ -10,8 +10,6 @@ $T_GAMERULES   = "game_rules";
 
 $conn = New DatabaseConn();
 
-setDBAdmin($conn);
-
 echo "CLEARING TABLES...<BR/>";
 
 echo "<BR/>CLEARING RULES LIST...";
