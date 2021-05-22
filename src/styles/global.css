@@ -81,6 +81,11 @@ section#content > div{
 #play-area #game-controls{  height: 40%;    width: 70%; }
 #play-area #game-rules{     height: 60%;    width: 100%; }
 
+#play-area > section{
+    display: inline-block;
+    float: left;
+}
+
 
 #play-area #game-info{
     background-color: lightblue;
