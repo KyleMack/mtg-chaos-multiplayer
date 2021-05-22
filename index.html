@@ -21,7 +21,6 @@
             <section id="login-form">
                 <button onclick="createNewRoom();">Create Room</button>
                 <button>Join Room</button>
-                <button onclick="confetti.start(1000);">Confetti (Broken :( )</button>
             </section>
 
             <footer>
@@ -48,7 +47,13 @@
         </div>
     </template>
 
-    <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
+    <!-- Template for the user interface for the game owner-->
+    <template id="owner-interface"></template>
+
+    <!-- Template for the user interface for guests-->
+    <template id="owner-interface"></template>
+
+    
     <script type="text/javascript" src="src/scripts/utils.js"></script>
     <script type="text/javascript" src="src/scripts/chaosMTG.js"></script>
 </body>

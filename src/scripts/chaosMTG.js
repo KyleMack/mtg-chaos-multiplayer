@@ -13,8 +13,20 @@ async function createNewRoom(){
 
         //If the reqeust was successful
         .then(json => {
-            displaySuccessMessage(json["gameCode"], json["playerId"]);
             l(json);
+            
+            displaySuccessMessage(json["gameCode"], json["playerName"]);
+            setPlayerId(json["playerId"]);
+            setPlayerName(json["playerName"]);
+            setGameCode(json["gameCode"]);
+
+            //TODO: 
+    
+            //If the request was successful...
+
+            //...and display the main window
+
+
         })
 
         //If there was an error
@@ -23,20 +35,7 @@ async function createNewRoom(){
             l(error);
         });
 
-    //TODO: 
 
-    
-    //If the request was successful...
-
-    //...save the room code...
-
-    //...and display the main window
-
-    //if the request failed...
-
-    //...display the error...
-
-    //...and try again
 }
 
 //Displays the loading screen
