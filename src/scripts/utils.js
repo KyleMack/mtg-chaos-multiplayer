@@ -57,7 +57,7 @@ function getLoadingContent(){
 }
 
 //Gets the content for the 'Join Room' page
-function getjoinRoomContent(){
+function getJoinRoomContent(){
     return getTemplate(JOIN_TEMPLATE);
 }
 
