@@ -35,9 +35,6 @@ $activePlayers = $conn->getPlayersInGame($game_code);
 //TODO: Return
 
 
-
-
-
 //Create the array to hold the response
 $response = array();
 
