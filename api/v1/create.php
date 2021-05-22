@@ -12,22 +12,23 @@ include_once '../coreIncludes.php';
 //Generate the random code and player name
 $gameCode = generateGameCode();
 $playerName = generatePlayerName();
-$playerCode = generatePlayerCode();
+$playerId = generatePlayerId();
 
 //Create DB connection
 $conn = New ChaosDB();
 
 //Commit the player to the database
-$conn->savePlayer($playerCode, $playerName);
+$conn->savePlayer($playerId, $playerName);
 
 //Commit the game to the database
-$conn->saveGame($gameCode, $playerCode);
+$conn->saveGame($gameCode, $playerId);
 
 //Create the linking record between the player and the game
-$conn->addPlayerToGame($gameCode, $playerCode);
+$conn->addPlayerToGame($gameCode, $playerId);
 
 //Create a assoc array for the JSON response
-$response = array(  "game code"=>$gameCode,
+$response = array(  "gameCode"=>$gameCode,
+                    "playerId"=>$playerId,
                     "success"=>"true",
                     "playerName"=>$playerName);
 

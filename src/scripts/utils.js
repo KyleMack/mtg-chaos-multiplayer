@@ -54,5 +54,15 @@ function callAPI(endpoint){
     });
 }
 
+function saveRoomCode(){ }
+function getRoomCode(){ }
+
+function savePlayerId(){ }
+function getPlayerId(){ }
+
+function savePlayerName(){ }
+function getPlayerName(){ }
+
+
 //Wrapper function for console output
 function l(o){if(DEBUGGING){console.log(o);}}

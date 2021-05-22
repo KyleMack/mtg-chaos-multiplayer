@@ -13,11 +13,13 @@ async function createNewRoom(){
 
         //If the reqeust was successful
         .then(json => {
+            displaySuccessMessage(json["gameCode"], json["playerId"]);
             l(json);
         })
 
         //If there was an error
         .catch(error => {
+            displayErrorMessage();
             l(error);
         });
 
@@ -40,6 +42,18 @@ async function createNewRoom(){
 //Displays the loading screen
 function displayLoadingScreen(){
     updateContent( getLoadingContent() );
+}
+
+//Updates the loading screen to display a success message
+function displaySuccessMessage(gameCode, playerName){
+    document.querySelector("#loading-message").innerHTML = "Finalizing Game...";
+    document.querySelector("#loading-text").innerHTML = `Finalizing game [${gameCode}] for player [${playerName}]...`;
+}
+
+//Updates the loading screen to display an error
+function displayErrorMessage(){
+    document.querySelector("#loading-message").innerHTML = "Error creating game...";
+    document.querySelector("#loading-text").innerHTML = `Something went wrong, please contact the administrator or try again later`;
 }
 
 //Creates a spinning card element

@@ -26,7 +26,7 @@ function generatePlayerName(){
 }
 
 //Generates a player code randomly
-function generatePlayerCode(){
+function generatePlayerId(){
     //Generate a random code
     $rCode = uniqid("");
 
