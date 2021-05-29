@@ -140,7 +140,7 @@ function callFetchAPI(roomCode){
 function callJoinAPI(roomCode){
     return new Promise((resolve, reject)=>{
         callAPI(`join.php?room_code=${roomCode}`)
-            .then(join=>resolve(json));
+            .then(json=>resolve(json));
     });
 }
 
