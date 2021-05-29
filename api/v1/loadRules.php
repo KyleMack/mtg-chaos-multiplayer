@@ -16,6 +16,6 @@ $rWacky         = loadJSONFile('../data/rulesets/wackyLand.json');
 
 
 //Add a test rule
-$conn->addRule("TEST", "This is a test rule");
+echo $conn->addRule("TEST", "This is a test rule");
 
 
