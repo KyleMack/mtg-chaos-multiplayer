@@ -70,6 +70,7 @@ async function createNewRoom(){
             displayControls();
             updateGame(true);
 
+            scheduleUpdate();
         })
 
         //If there was an error
@@ -102,8 +103,16 @@ async function joinRoom(){
 
             displayControls();
             updateGame(true);
+            
+            scheduleUpdate();
         });
 
+}
+
+//Sets an interval API call to the 'Fetch' endpoint
+function scheduleUpdate(delay = 7000){
+    const timerRef = setInterval( updateGame, delay, true );
+    setTimerRef( timerRef );
 }
 
 //Calls the 'Fetch' endpoint and pulls in the most recent game data

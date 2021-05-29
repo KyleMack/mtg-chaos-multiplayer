@@ -26,6 +26,7 @@ function initializeData(){
     _c.gameCode = null;     //Unique ID of the game
     _c.activePlayers = [];  //List of currently active players
     _c.activeRules = [];    //List of currently active rules
+    _c.timer = null;        //Reference to the update timer
 
 }
 
@@ -57,6 +58,9 @@ function setActivePlayers(activePlayers){ window.chaos.activePlayers = activePla
 
 function getActiveRules(){ return window.chaos.activeRules; }
 function setActiveRules(activeRules){ window.chaos.activeRules = activeRules; }
+
+function getTimerRef(){ return window.chaos.timer; }
+function setTimerRef(timer){ window.chaos.timer = timer; }
 
 //Updates the content of the main page with the provided HTML string
 function updateContent(html){
