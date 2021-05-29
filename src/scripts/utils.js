@@ -103,10 +103,18 @@ function createHTMLList(items,itemClass = ""){
     //If there are no items, return
     if(items.length === 0){ return html; }
 
-    //For each item, append <li>item</li>
-    for(let i = 0; i < items.length; i++){
-        html += `<li class="${itemClass}">${items[i]}</li>`;
+    if(itemClass == ""){
+        //For each item, append <li>item</li>
+        for(let i = 0; i < items.length; i++){
+            html += `<li>${items[i]}</li>`;
+        }
+    } else {
+        //For each item, append <li>item</li>
+        for(let i = 0; i < items.length; i++){
+            html += `<li class="${itemClass}">${items[i]}</li>`;
+        }
     }
+
 
     return html;
 

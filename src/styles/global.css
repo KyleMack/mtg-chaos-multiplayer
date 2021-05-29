@@ -124,7 +124,7 @@ section#content > div{
     border-top: 2px solid black;
 }
 
-#play-area #room-players-display:first-child{
+#play-area #room-players-display li:first-child{
     font-weight: bolder;
     border-top: none;
 }
