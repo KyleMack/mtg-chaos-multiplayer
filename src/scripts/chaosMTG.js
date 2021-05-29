@@ -84,6 +84,26 @@ async function createNewRoom(){
 //Joins a room using the inputted room code 
 async function joinRoom(){
 
+    //Get the room code
+    const roomCode = document.querySelector('#room-code-input').value;
+
+    //Display the loading screen
+    displayLoadingScreen();
+
+    //Call the 'Join' API endpoint
+    callJoinAPI(roomCode)
+
+        //If the request was successful
+        .then(json => {
+            l(json);
+
+            //Process the returned json
+            processJoinData( json );
+
+            displayControls();
+            updateGame(true);
+        });
+
 }
 
 //Calls the 'Fetch' endpoint and pulls in the most recent game data
@@ -96,10 +116,12 @@ async function updateGame(performUpdate = false){
         .then( json => {
             l(json);
 
+            //Process the returned data
             processFetchData( json );
 
+            //If requested, update the screen
             if(performUpdate){
-                window.updateScreen();
+                updateScreen();
             }
         });
 }

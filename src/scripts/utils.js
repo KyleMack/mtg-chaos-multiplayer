@@ -35,6 +35,15 @@ function processFetchData(json){
     setActivePlayers( json["activePlayers"] );
 }
 
+//Accepts the JSON response from a 'Join' API call
+function processJoinData(json){
+    setPlayerId( json["playerId"] );
+    setPlayerName( json["playerName"] );
+    setGameCode( json["gameCode"] );
+    setActivePlayers( json["activePlayers"] );
+    setActiveRules( json["activeRules"] );
+}
+
 function getPlayerId(){ return window.chaos.playerId; }
 function setPlayerId(playerId){ window.chaos.playerId = playerId; }
 
@@ -124,6 +133,14 @@ function callFetchAPI(roomCode){
     return new Promise((resolve, reject) => {
         callAPI(`fetch.php?room_code=${roomCode}`)
             .then(json=>resolve(json));
+    });
+}
+
+//Calls the Join API endpoing using the passed room code
+function callJoinAPI(roomCode){
+    return new Promise((resolve, reject)=>{
+        callAPI(`join.php?room_code=${roomCode}`)
+            .then(join=>resolve(json));
     });
 }
 
