@@ -92,8 +92,8 @@ section#content > div{
 /******************** CONTROLS PAGE *****************************/
 
 #play-area{                 height: 100vh;  width: 100vw; }
-#play-area #game-info{      height: 40%;    width: 30%; }
-#play-area #game-controls{  height: 40%;    width: 70%; }
+#play-area #game-info{      height: 40%;    width: 40%; }
+#play-area #game-controls{  height: 40%;    width: 60%; }
 #play-area #game-rules{     height: 60%;    width: 100%; }
 
 #play-area > section{
@@ -117,4 +117,14 @@ section#content > div{
 
 #play-area #game-rules{
     background-color: lightgoldenrodyellow;
+}
+
+#play-area #room-players-display li{
+    font-size: 0.8em;
+    border-top: 2px solid black;
+}
+
+#play-area #room-players-display li:first{
+    font-weight: bolder;
+    border-top: none;
 }
