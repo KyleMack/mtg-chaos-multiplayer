@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS game_players;
 DROP TABLE IF EXISTS game_rules;
 DROP TABLE IF EXISTS active_games;
 DROP TABLE IF EXISTS players;
+DROP TABLE IF EXISTS rules;
 
 \c chaos_db;
 
