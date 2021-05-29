@@ -21,7 +21,7 @@ async function createNewRoom(){
             setGameCode(json["gameCode"]);
 
             displayControls();
-            updateScreen();
+            updateGame(true);
 
         })
 
@@ -37,6 +37,24 @@ async function createNewRoom(){
 //Joins a room using the inputted room code 
 async function joinRoom(){
 
+}
+
+//Calls the 'Fetch' endpoint and pulls in the most recent game data
+async function updateGame(updateScreen = false){
+
+    //Call the 'Fetch' API endpoint to get the most recent game data
+    callFetchAPI( getGameCode() )
+
+        //If the request was successful
+        .then( json => {
+            l(json);
+
+            processFetchData( json );
+
+            if(updateScreen){
+                updateScreen();
+            }
+        });
 }
 
 //Displays the loading screen
@@ -79,7 +97,7 @@ function updateScreen(){
     document.querySelector("#room-code-display").innerHTML = getGameCode();
 
     //Display Active Players
-    document.querySelector("#room-players-display").innerHTML = createHTMLList( getActivePlayers() );
+    document.querySelector("#room-players-display").innerHTML = createHTMLList( getPlayersList() );
 
     //Display Active Rules
     document.querySelector("#room-rules-display").innerHTML = createHTMLList( getActiveRules() );

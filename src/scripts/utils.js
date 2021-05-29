@@ -29,6 +29,12 @@ function initializeData(){
 
 }
 
+//Accepts the JSON response from a 'Fetch' API call 
+function processFetchData(json){
+    setGameCode( json["roomCode"] );
+    setActivePlayers( json["activePlayers"] );
+}
+
 function getPlayerId(){ return window.chaos.playerId; }
 function setPlayerId(playerId){ window.chaos.playerId = playerId; }
 
@@ -94,10 +100,29 @@ function createHTMLList(items,itemClass = ""){
 
 }
 
+//Returns the list of players to display 
+function getPlayersList(){
+    const players = getActivePlayers();
+    const m = getPlayerName();
+
+    //Sort the list to have the players name in the front
+    const sortedList = players.sort( (x,y) => { return x == m ? -1 : y == m ? 1 : 0 } );
+
+    return sortedList;
+}
+
 //Calls the create API endpoint
 function callCreateAPI(){
     return new Promise((resolve, reject)=>{
         callAPI('create.php')
+            .then(json=>resolve(json));
+    });
+}
+
+//Calls the fetch API endpoint using the passed room code
+function callFetchAPI(roomCode){
+    return new Promise((resolve, reject) => {
+        callAPI(`fetch.php?room_code=${roomCode}`)
             .then(json=>resolve(json));
     });
 }
