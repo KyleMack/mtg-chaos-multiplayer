@@ -87,7 +87,7 @@ async function joinRoom(){
 }
 
 //Calls the 'Fetch' endpoint and pulls in the most recent game data
-async function updateGame(updateScreen = false){
+async function updateGame(performUpdate = false){
 
     //Call the 'Fetch' API endpoint to get the most recent game data
     callFetchAPI( getGameCode() )
@@ -98,8 +98,8 @@ async function updateGame(updateScreen = false){
 
             processFetchData( json );
 
-            if(updateScreen){
-                updateScreen();
+            if(performUpdate){
+                window.updateScreen();
             }
         });
 }
