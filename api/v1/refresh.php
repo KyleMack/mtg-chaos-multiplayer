@@ -9,6 +9,7 @@ $T_GAMEPLAYERS = "game_players";
 $T_GAMERULES   = "game_rules";
 
 $conn = New DatabaseConn();
+setDBAdmin($conn);
 
 echo "CLEARING TABLES...<BR/>";
 
