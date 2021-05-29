@@ -31,7 +31,7 @@ CREATE TABLE game_players(
 );
 
 CREATE TABLE rules(
-   rule_code CHAR(4),
+   rule_code CHAR(4) NOT NULL UNIQUE,
    rule_text TEXT NOT NULL,
 
    PRIMARY KEY (rule_code)

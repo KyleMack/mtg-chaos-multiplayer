@@ -76,14 +76,14 @@ class ChaosDB{
     }
 
     //Adds a rule to the database
-    public function addRule(ruleCode, ruleText){
+    public function addRule($ruleCode, $ruleText){
         //Set the user to admin
         $this->setAdmin();
 
         //Call insert
         $insertID = $this->conn->insertRecord(self::T_RULES, array(
-                "rule_code"=>ruleCode,
-                "rule_text"=>ruleText
+                "rule_code"=>$ruleCode,
+                "rule_text"=>$ruleText
             ));
 
         //Return the result
