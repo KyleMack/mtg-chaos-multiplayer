@@ -41,7 +41,6 @@ function processJoinData(json){
     setPlayerName( json["playerName"] );
     setGameCode( json["gameCode"] );
     setActivePlayers( json["activePlayers"] );
-    setActiveRules( json["activeRules"] );
 }
 
 function getPlayerId(){ return window.chaos.playerId; }
