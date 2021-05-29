@@ -1,0 +1,22 @@
+{
+  "E001": "1. Mirrodin - All permanents are artifacts in addition to their other types. Mana can be spent as though it were mana of any color.",
+  "E002": "2. Mirari Concentrate - All creatures get +1/+1. Whenever a player taps a land for mana, the player adds an additional mana of any type that land produced to his or her mana pool. Whenever a player casts an instant or sorcery spell, the player may pay {3}. If the player does, he or she copies the spell and may choose new targets for the copy.",
+  "E003": "3. Yogan Ran Digidan - All players may play spells or effects in response to Chaos Rolls.",
+  "E004": "4. Yet Another Aether Vortex - All creatures have haste. Players play with the top card of their libraries revealed. Noninstant, nonsorcery cards on top of a library are in play under their owner's control in addition to being in that library.",
+  "E005": "5. Rites of Flourishing - At the beginning of each player's draw step, that player draws an additional card. Each player may play an additional land on each of his or her turns.",
+  "E006": "6. Cursed Rod - All creatures lose all abilities.",
+  "E007": "7. Urza's Hotel and Casino - Sacrifice three permanents: Roll on the chaos list. Any player may activate this ability.",
+  "E008": "8. Legends - All nonland permanents are legendary.",
+  "E009": "9. Kamigawa - Whenever a player casts an instant or sorcery, that player may reveal an instant or sorcery from their hand and pay its costs. If they do, add the revealed card's effects to the spell that player cast.",
+  "E010": "10. Aluren - Any player may play creature cards with converted mana cost 3 or less without paying their mana costs and as though they had flash.",
+  "E011": "11. Odyssey Block -- All instants and sorceries gain \"Flashback: pay this card's casting cost.\"",
+  "E012": "12. Mental Magic - Players may cast spells in their hand as any spell with the same mana cost. (For example: Llanowar Elves may be played as though it were a giant growth.) Players may not look up cards while this enchantment is active.",
+  "E013": "13. Alara Reborn - The first spell each player plays each turn has cascade. (When you cast your first spell, exile cards from the top of your library until you exile a nonland card that costs less. You may cast it without paying its mana cost. Put the exiled cards on the bottom in a random order.)",
+  "E014": "14. Vedalken Orrery - All nonland cards have flash.",
+  "E015": "15. City of Solitude - Players can't cast spells or activate abilities except during their own turn.",
+  "E016": "16. Phyrexia - Colored mana symbols in spell costs may be paid by paying two life.",
+  "E017": "17. Chaos World - There is an additional chaos phase after the first one each turn.",
+  "E018": "18. Lorwyn Block - At the beginning of each player's upkeep, all players clash. Each player who wins the clash puts a 2/2 creature token with all creature types and colors onto the battlefield.",
+  "E019": "19. Innistrad - Whenever a creature dies, if it had no +1/+1 counters on it, return it to the battlefield with a +1/+1 counter on it.",
+  "E020": "20. Zendikar - All lands are 2/2 creatures in addition to their other types."
+}

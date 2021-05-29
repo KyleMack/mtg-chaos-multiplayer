@@ -1,0 +1,11 @@
+{
+  "P001": "1. Sharp - Search your library for up to two creature cards, reveal them, and put them in your hand. Then, put up to two creature cards from your hand onto the battlefield.",
+  "P002": "2. Pants - Distribute 2 pants counters on any number of target creatures. If a creature with a pants counter would leave the battlefield for any reason, remove a pants counter from it instead.",
+  "P003": "3. Terres - Search your library for 1d4 lands and put them into your hand. You may then discard your hand. If you do, put all Â­lands discarded this way onto the battlefield under your control.",
+  "P004": "4. Tasty-Tomcat - Put a 3/3 tomcat creature token onto the battlefield. The token must be represented by an object at least as large as a skittle. It has \"Sacrifice this creature and eat the token: Gain 15 life.\"",
+  "P005": "5. Milkmaidman - Return target creature from your graveyard to play under your control. Put a defibrillator counter on it. Creatures with defibrillator counters have: \"Sacrifice this creature: Return target creature from a graveyard to play under your control.\"",
+  "P006": "6. Choki - The next spell you play may be cast for free. If it has a converted mana cost of 4 or less, the next spell you play after that may be cast for free.",
+  "P008": "8. Rumia - You get an emblem with \"Pay 2 mana: Put a 1/1 green saproling creature onto the battlefield.\"",
+  "P009": "9. ZayTM - Gain control of all creatures in play with visible fur on the creature in its art. (Hair on humanoids does not count unless it covers their body)",
+  "P010": "10. OJ - For each opponent, put target permanent that player controls on the bottom of that player's library."
+}

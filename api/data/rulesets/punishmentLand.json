@@ -1,0 +1,17 @@
+{
+  "U002": "2. Slaughter Olympics - Each opponent may search your library for up to one card and exile it and all cards that share a name with it from your library.",
+  "U003": "3. NecroCon 2009 - Each opponent, going clockwise, beginning with the player to your left, may put a creature card from your graveyard into play.",
+  "U004": "4. Mana Boned - Sacrifice a land. Reveal your hand. Discard a land.",
+  "U005": "5. Pernicious Derp - Roll a six sided die. Sacrifice all permanents with converted mana cost equal to the number you rolled. Repeat this process.",
+  "U006": "6. Just Die - Choose one: Sacrifice 2 creatures; Sacrifice a land; Lose the game; Kill yourself. You may not make a choice you cannot do. (Ex: If you control no lands and your only creature is platinum angel, you must kill yourself.)",
+  "U007": "7. Into The Mist - Exile target creature you control.",
+  "U008": "8. Austere Recall - Choose an opponent. That opponent picks either all creatures with converted mana cost 4 or greater, or all creatures with mana cost 3 or less. You sacrifice those creatures.",
+  "U009": "9. Ow - Lose 5 life.",
+  "U010": "10. Did You Need Those? - Sacrifice all nonland, noncreature permanents you control.",
+  "U011": "11. Hope You Don't Use Auras - Sacrifice a creature. Sacrifice an enchantment.",
+  "U012": "12. Denied - The next spell you cast is countered.",
+  "U013": "13. Ow. No, Seriously, Ow. - Lose 5 life. Then, if you have 10 or more life, lose 5 life.",
+  "U014": "14. Eat Of My Flesh - Lose half your life, rounded up. Each opponent gains half that life, rounded down.",
+  "U015": "15. Reverse-Bribery - Target player may search your library for a permanent and put it into play under their control.",
+  "U016": "16. Bowser Revolution - Add all player's life totals together, then divide it by the number of players, rounded down. Each player's life total is now that total."
+}

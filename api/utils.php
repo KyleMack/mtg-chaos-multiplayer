@@ -50,11 +50,6 @@ function loadPlayerCodes(){
     return $playerCodes;
 }
 
-//Loads the chaos rules and returns the array object
-function loadChaosRules(){
-    //TODO
-}
-
 //Loads a JSON file from the file systems 'data' directory
 function loadJSONFile($fileName = null){
     if($fileName === null){

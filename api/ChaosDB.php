@@ -12,6 +12,7 @@ class ChaosDB{
     const T_PLAYERS     = "players";
     const T_ACTIVEGAMES = "active_games";
     const T_GAMEPLAYERS = "game_players";
+    const T_RULES       = "rules";
     const T_GAMERULES   = "game_rules";
 
     public function __construct(){
@@ -72,6 +73,21 @@ class ChaosDB{
         //Return the result
         return $output;
 
+    }
+
+    //Adds a rule to the database
+    public function addRule(ruleCode, ruleText){
+        //Set the user to admin
+        $this->setAdmin();
+
+        //Call insert
+        $insertID = $this->conn->insertRecord(self::T_RULES, array(
+                "rule_code"=>ruleCode,
+                "rule_text"=>ruleText
+            ));
+
+        //Return the result
+        return $insertID;
     }
 
     //Returns an array with all players linked to a game
