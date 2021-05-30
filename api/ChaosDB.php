@@ -208,4 +208,16 @@ class ChaosDB{
 
     }
 
+    //Returns a random rule from the database that starts with the passed code
+    public function getRandomRule(filter = 'C'){
+        //Set the user to guest
+        $this->setUser();
+
+        //Perform a raw query to select a random row using the filter
+        $SQL = "SELECT * FROM ( SELECT * FROM rules WHERE rule_code LIKE '$filter%' ) AS r OFFSET floor( random() * ( SELECT COUNT(*) FROM rules WHERE rule_code LIKE '$filter%' ) ) LIMIT 1";
+        $results = $this->conn->queryRaw( $SQL );
+
+        $return results;
+    }
+
 }
