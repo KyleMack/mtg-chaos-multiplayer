@@ -43,7 +43,8 @@ CREATE TABLE game_rules(
     rule_code         CHAR(4) NOT NULL,
     rule_order        INT NOT NULL,
    
-    FOREIGN KEY (active_game_code) REFERENCES active_games(game_code)
+    FOREIGN KEY (active_game_code) REFERENCES active_games(game_code),
+    FOREIGN KEY (rule_code) REFERENCES rules(rule_code)
 );
 
 CREATE INDEX active_games_index ON active_games (game_code);
