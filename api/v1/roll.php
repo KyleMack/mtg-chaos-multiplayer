@@ -26,4 +26,16 @@ $conn = New ChaosDB();
 //Get a rule randomly from the database
 $rule = $conn->getRandomRule('C');
 
-var_dump( $rule );
+
+//TODO: Add optional parameter of room_code
+//TODO: Validate the room code
+//TODO: Save the rule to the database using the room code
+
+//Create the array to hold the response
+$response = array();
+
+$response["roomCode"] = "";
+$response["ruleCode"] = $rule["rule_code"];
+$response["ruleText"] = $rule["rule_text"];
+
+echo json_encode( $response );
