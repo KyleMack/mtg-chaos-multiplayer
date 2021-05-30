@@ -7,12 +7,12 @@ if( !isset( $_REQUEST["type"] ) || empty($_REQUEST["type"]) ){
 }
 
 //Define constants for the incoming parameter
-const R_CHAOS       = "CHAOS";
-const R_DURGS       = "DURGS";
-const R_ENCHANT     = "ENCHANT";
-const R_PERSONA     = "PERSONA";
-const R_PUNISHMENT  = "PUNISHMENT";
-const R_WACKY       = "WACKY";
+$R_CHAOS       = "CHAOS";
+$R_DURGS       = "DURGS";
+$R_ENCHANT     = "ENCHANT";
+$R_PERSONA     = "PERSONA";
+$R_PUNISHMENT  = "PUNISHMENT";
+$R_WACKY       = "WACKY";
 
 //Get the roll type and convert to uppercase
 $rollType = strtoupper( $_REQUEST["type"] );
