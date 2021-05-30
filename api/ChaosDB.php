@@ -165,6 +165,21 @@ class ChaosDB{
         return $insertID;
     }
 
+    //Adds a rule to an existing game
+    public function addRuleToGame($gameCode, $ruleCode){
+        //Set the user to admin
+        $this->setAdmin();
+
+        //First, get the highest 'rule_order' currently saved for the game
+        $highestRuleSQL = "SELECT rule_order FROM game_rules WHERE active_game_code='$gameCode' ORDER BY rule_order DESC LIMIT 1";
+        $results = $this->conn->queryRaw( $highestRuleSQL );
+
+        //TODO: complete
+
+        return $results;
+
+    }
+
     //Returns true if the passed player ID exists in the database
     public function checkPlayerExists($playerId){
         $this->setUser();
