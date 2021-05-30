@@ -209,7 +209,7 @@ class ChaosDB{
     }
 
     //Returns a random rule from the database that starts with the passed code
-    public function getRandomRule(filter = 'C'){
+    public function getRandomRule($filter = 'C'){
         //Set the user to guest
         $this->setUser();
 
