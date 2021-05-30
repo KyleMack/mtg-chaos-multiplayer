@@ -217,7 +217,7 @@ class ChaosDB{
         $SQL = "SELECT * FROM ( SELECT * FROM rules WHERE rule_code LIKE '$filter%' ) AS r OFFSET floor( random() * ( SELECT COUNT(*) FROM rules WHERE rule_code LIKE '$filter%' ) ) LIMIT 1";
         $results = $this->conn->queryRaw( $SQL );
 
-        $return results;
+        return $results;
     }
 
 }
