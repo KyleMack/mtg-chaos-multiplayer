@@ -116,26 +116,25 @@ function roll(type = "CHAOS"){
 	let rollArg = "";
 	switch(code){
 		case 'CHAOS':
-			rollArg = "";
+			rollArg = "CHAOS";
 			break;
 		case 'WORLD':
-			rollArg = "";
+			rollArg = "WORLD";
 			break;
 		case 'PERSONA':
-			rollArg = "";
+			rollArg = "PERSONA";
 			break;
 		case 'DURGS':
-			rollArg = "";
+			rollArg = "DURGS";
 			break;
 		case 'PUNISHMENT':
-			rollArg = "";
+			rollArg = "PUNISHMENT";
 			break;
 		case 'WACKY':
-			rollArg = "";
+			rollArg = "WACKY";
 			break;
 		default:
-			rollArg = "";
-			break;
+            return;
 	}
 
 	//TODO: Perform fetch call

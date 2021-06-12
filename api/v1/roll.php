@@ -55,6 +55,8 @@ if( $saveCode ){
 
     //TODO: Save the rule to the database using the room code
 
+    $conn->addRuleToGame( $roomCode, $rule["rule_code"] );
+
 }
 
 //Create the array to hold the response
