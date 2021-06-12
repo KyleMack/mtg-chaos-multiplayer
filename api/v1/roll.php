@@ -1,5 +1,10 @@
 <?php
 
+//Bring in core include file
+include_once '../coreIncludes.php';
+
+//Create DB connection
+$conn = New ChaosDB();
 
 //Check that the required parameters are set
 if( !isset( $_REQUEST["type"] ) || empty($_REQUEST["type"]) ){
@@ -29,12 +34,6 @@ if( isset( $_REQUEST["room_code"] ) ){
         $saveCode = true;
     }
 }
-
-//Bring in core include file
-include_once '../coreIncludes.php';
-
-//Create DB connection
-$conn = New ChaosDB();
 
 //Define constants for the incoming parameter
 $R_CHAOS       = "CHAOS";
