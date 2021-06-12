@@ -109,6 +109,38 @@ async function joinRoom(){
 
 }
 
+//Calls the roll endpoint for the appropriate roll type based on passed type
+function roll(type = "CHAOS"){
+	//Convert the passed type to uppercase
+	const code = type.toUpperCase();
+	let rollArg = "";
+	switch(code){
+		case 'CHAOS':
+			rollArg = "";
+			break;
+		case 'WORLD':
+			rollArg = "";
+			break;
+		case 'PERSONA':
+			rollArg = "";
+			break;
+		case 'DURGS':
+			rollArg = "";
+			break;
+		case 'PUNISHMENT':
+			rollArg = "";
+			break;
+		case 'WACKY':
+			rollArg = "";
+			break;
+		default:
+			rollArg = "";
+			break;
+	}
+
+	//TODO: Perform fetch call
+}
+
 //Sets an interval API call to the 'Fetch' endpoint
 function scheduleUpdate(delay = 7000){
     const timerRef = setInterval( updateGame, delay, true );
