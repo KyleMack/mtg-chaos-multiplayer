@@ -84,6 +84,7 @@ if( $saveCode ){
 //Create the array to hold the response
 $response = array();
 
+$response["saveCode"] = $saveCode;
 $response["roomCode"] = $roomCode;
 $response["ruleCode"] = $rule["rule_code"];
 $response["ruleText"] = $rule["rule_text"];
