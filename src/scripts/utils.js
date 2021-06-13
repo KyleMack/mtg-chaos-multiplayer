@@ -156,10 +156,10 @@ function callJoinAPI(roomCode){
 }
 
 //Calls the roll API endpoint using the passed room code and roll type
-function callRollAPI(rollType = 'C', roomCode = ""){
+function callRollAPI(rollType = 'C', roomCode = ''){
 	//Check if the room code was passed
 	let args = `type=${rollType}`;
-	if( roomCode.length === 0 ){
+	if( roomCode.length > 0 ){
 		args = `${args}&room_code=${roomCode}`;
 	}
 

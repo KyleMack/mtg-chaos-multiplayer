@@ -116,30 +116,33 @@ function roll(type = "CHAOS"){
 	let rollArg = "";
 	switch(code){
 		case 'CHAOS':
-			rollArg = "CHAOS";
+			rollArg = "C";
 			break;
 		case 'ENCHANT':
-			rollArg = "WORLD";
+			rollArg = "E";
 			break;
 		case 'PERSONA':
-			rollArg = "PERSONA";
+			rollArg = "P";
 			break;
 		case 'DURGS':
-			rollArg = "DURGS";
+			rollArg = "D";
 			break;
 		case 'PUNISHMENT':
-			rollArg = "PUNISHMENT";
+			rollArg = "U";
 			break;
 		case 'WACKY':
-			rollArg = "WACKY";
+			rollArg = "W";
 			break;
 		default:
 			break;
             return;
 	}
 
-	//TODO: Perform fetch call
-
+	//Perform the fetch call the the roll api with the roll type and game code
+	callRollAPI( rollArg, getGameCode() )
+		.then( json => {
+			l(json);
+		});
 
 
 
