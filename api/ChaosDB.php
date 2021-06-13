@@ -171,7 +171,7 @@ class ChaosDB{
         $this->setAdmin();
 
         //First, get the total number of rules currently saved in the game
-        $highestRuleSQL = "SELECT * FROM game_rules WHERE active_game_code='$gameCode' DESC";
+        $highestRuleSQL = "SELECT * FROM game_rules WHERE active_game_code='$gameCode'";
         $results = $this->conn->queryRaw( $highestRuleSQL );
 
         //If the array is empty, assume no rules exist so value new rule should be 1
