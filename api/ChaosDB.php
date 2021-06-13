@@ -174,6 +174,8 @@ class ChaosDB{
         $highestRuleSQL = "SELECT rule_order FROM game_rules WHERE active_game_code='$gameCode' ORDER BY rule_order DESC LIMIT 1";
         $results = $this->conn->queryRaw( $highestRuleSQL );
 
+        echo "HERE ARE THE RESULTS:";
+
         var_dump( $results );
 
         //TODO: complete

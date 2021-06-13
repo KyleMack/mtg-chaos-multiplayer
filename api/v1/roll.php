@@ -77,8 +77,6 @@ $rule = $conn->getRandomRule($ruleCode);
 //If a valid room code was passed, save the rule to the database
 if( $saveCode ){
 
-    echo "SAVING RULE ";
-
     $conn->addRuleToGame( $roomCode, $rule["rule_code"] );
 
 }
