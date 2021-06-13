@@ -174,9 +174,12 @@ class ChaosDB{
         $highestRuleSQL = "SELECT * FROM game_rules WHERE active_game_code='$gameCode'";
         $results = $this->conn->queryRaw( $highestRuleSQL );
 
-        //If the array is empty, assume no rules exist so value new rule should be 1
-        $ruleCount = count( $results );
-        $nextNumber = 0;
+        //Count the number of rules returned
+        $nextNumber = 1;
+        foreach( $results as $record ){
+            $nextNumber++;
+        }
+
         if( $ruleCount == 0 ){
             $nextNumber = 1;
         } else {
