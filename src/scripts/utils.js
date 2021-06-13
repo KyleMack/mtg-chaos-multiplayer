@@ -47,7 +47,7 @@ function processFetchData(json){
 	const rCount = newRules.length;
 	let createdRules = [];
 	for(let i = 0; i < rCount; i++){
-	    createdRules.push( (new Rule(json["roomRules"][i]["ruleCode"], (json["roomRules"][i]["text"], (json["rules"][i]["order"])) );
+	    createdRules.push( (new Rule(json["roomRules"][i]["ruleCode"], json["roomRules"][i]["text"], json["roomRules"][i]["order"])) );
 	}
 	setActiveRules( createdRules );
 	triggerUpdate();

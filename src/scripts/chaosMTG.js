@@ -44,7 +44,12 @@ function updateScreen(){
     document.querySelector("#room-players-display").innerHTML = createHTMLList( getPlayersList() );
 
     //Display Active Rules
-    document.querySelector("#room-rules-display").innerHTML = createHTMLList( getActiveRules() );
+    const rules = getActiveRules();
+    let rulesHTML = [];
+    for(let i = 0; i < rules.length; i++){
+	rulesHTML.push( rules[i].text );
+    }
+    document.querySelector("#room-rules-display").innerHTML = createHTMLList( rulesHTML );
 
 }
 

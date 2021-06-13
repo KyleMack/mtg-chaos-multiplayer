@@ -177,13 +177,7 @@ class ChaosDB{
         //Count the number of rules returned
         $nextNumber = 1;
         foreach( $results as $record ){
-            $nextNumber++;
-        }
-
-        if( $ruleCount == 0 ){
-            $nextNumber = 1;
-        } else {
-            $nextNumber = $ruleCount + 1;
+            $nextNumber = $nextNumber + 1;
         }
 
         $insertID = $this->conn->insertRecord(self::T_GAMERULES, array(
