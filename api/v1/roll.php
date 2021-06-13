@@ -46,13 +46,36 @@ $R_WACKY       = "WACKY";
 //Get the roll type and convert to uppercase
 $rollType = strtoupper( $_REQUEST["type"] );
 
+//Check the parameters to get the rule
+$ruleCode = "";
+switch($rollType){
+    case 'CHAOS':
+        $ruleCode = 'C';
+        break;
+    case 'DURGS':
+        $ruleCode = 'D';
+        break;
+    case 'ENCHANT':
+        $ruleCode = 'E';
+        break;
+    case 'PERSONA':
+        $ruleCode = 'P';
+        break;
+    case 'PUNISHMENT':
+        $ruleCode = 'U';
+        break;
+    case 'WACKY':
+        $ruleCode = 'W';
+        break;
+    default:
+        $ruleCode = 'C';
+}
+
 //Get a rule randomly from the database
-$rule = $conn->getRandomRule('C');
+$rule = $conn->getRandomRule($ruleCode);
 
 //If a valid room code was passed, save the rule to the database
 if( $saveCode ){
-
-    //TODO: Save the rule to the database using the room code
 
     $conn->addRuleToGame( $roomCode, $rule["rule_code"] );
 
@@ -61,7 +84,7 @@ if( $saveCode ){
 //Create the array to hold the response
 $response = array();
 
-$response["roomCode"] = "";
+$response["roomCode"] = $roomCode;
 $response["ruleCode"] = $rule["rule_code"];
 $response["ruleText"] = $rule["rule_text"];
 
