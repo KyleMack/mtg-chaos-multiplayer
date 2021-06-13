@@ -155,6 +155,20 @@ function callJoinAPI(roomCode){
     });
 }
 
+//Calls the roll API endpoint using the passed room code and roll type
+function callRollAPI(rollType = 'C', roomCode = ""){
+	//Check if the room code was passed
+	let args = `type=${rollType}`;
+	if( roomCode.length === 0 ){
+		args = `${args}&room_code=${roomCode}`;
+	}
+
+	return new Promise((resolve, reject)=>{
+		callAPI(`roll.php?${args}`)
+			.then(json=>resolve(json));
+	});
+}
+
 //Calls the API with the given parameters
 function callAPI(endpoint){
     return new Promise((resolve, reject)=>{

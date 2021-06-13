@@ -118,7 +118,7 @@ function roll(type = "CHAOS"){
 		case 'CHAOS':
 			rollArg = "CHAOS";
 			break;
-		case 'WORLD':
+		case 'ENCHANT':
 			rollArg = "WORLD";
 			break;
 		case 'PERSONA':
@@ -134,10 +134,15 @@ function roll(type = "CHAOS"){
 			rollArg = "WACKY";
 			break;
 		default:
+			break;
             return;
 	}
 
 	//TODO: Perform fetch call
+
+
+
+
 }
 
 //Sets an interval API call to the 'Fetch' endpoint
