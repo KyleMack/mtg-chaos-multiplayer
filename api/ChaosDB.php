@@ -252,7 +252,8 @@ class ChaosDB{
         //Format the output to remove extra records
         $output = array();
         foreach( $results as $record ){
-            array_push( $output, $record["rule_code"], $record["rule_text"], $record["rule_order"]);
+            $rule = array("code"=>$record["rule_code"], "text"=>$record["rule_text"], "order"=>$record["rule_order"]);            
+            array_push( $output, $rule);
         }
 
         return $output;
