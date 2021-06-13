@@ -26,14 +26,32 @@ function initializeData(){
     _c.gameCode = null;     //Unique ID of the game
     _c.activePlayers = [];  //List of currently active players
     _c.activeRules = [];    //List of currently active rules
+    _c.dateUpdated = false; //When set to true, update the screen
     _c.timer = null;        //Reference to the update timer
 
 }
 
 //Accepts the JSON response from a 'Fetch' API call 
 function processFetchData(json){
-    setGameCode( json["roomCode"] );
-    setActivePlayers( json["activePlayers"] );
+    //Check if there are additional players, save the list if new > curr
+    const newPlayers = json["activePlayers"];
+    if( newPlayers.length > getActivePlayers().length ){
+	setActivePlayers( json["activePlayers"] );
+	triggerUpdate();
+    }
+
+    //Check if there are new rules, save the list if new > curr
+    const newRules = json["roomRules"];
+    if( newRules.length > getActiveRules().length ){
+	//Create a list of rule objects from the returned list
+	const rCount = newRules.length;
+	let createdRules = [];
+	for(let i = 0; i < rCount; i++){
+	    createdRules.push( (new Rule(json["roomRules"][i]["ruleCode"], (json["roomRules"][i]["text"], (json["rules"][i]["order"])) );
+	}
+	setActiveRules( createdRules );
+	triggerUpdate();
+    }
 }
 
 //Accepts the JSON response from a 'Join' API call
@@ -58,6 +76,9 @@ function setActivePlayers(activePlayers){ window.chaos.activePlayers = activePla
 
 function getActiveRules(){ return window.chaos.activeRules; }
 function setActiveRules(activeRules){ window.chaos.activeRules = activeRules; }
+
+function triggerUpdate(){window.chaos.dataUpdated = true;}
+function updateComplete(){window.chaos.dataUpdated = false;}
 
 function getTimerRef(){ return window.chaos.timer; }
 function setTimerRef(timer){ window.chaos.timer = timer; }
@@ -94,6 +115,7 @@ function getTemplate(templateName){
     var copy = template.content.cloneNode(true);
     return copy;  
 }
+
 
 //Accepts a list of items and returns a string of <li> items
 function createHTMLList(items,itemClass = ""){
