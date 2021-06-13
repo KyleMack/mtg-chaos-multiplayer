@@ -170,17 +170,26 @@ class ChaosDB{
         //Set the user to admin
         $this->setAdmin();
 
-        //First, get the highest 'rule_order' currently saved for the game
-        $highestRuleSQL = "SELECT rule_order FROM game_rules WHERE active_game_code='$gameCode' ORDER BY rule_order DESC LIMIT 1";
+        //First, get the total number of rules currently saved in the game
+        $highestRuleSQL = "SELECT * FROM game_rules WHERE active_game_code='$gameCode' DESC";
         $results = $this->conn->queryRaw( $highestRuleSQL );
 
-        echo "HERE ARE THE RESULTS:";
+        //If the array is empty, assume no rules exist so value new rule should be 1
+        $ruleCount = count( $results );
+        $nextNumber = 0;
+        if( $ruleCount == 0 ){
+            $nextNumber = 1;
+        } else {
+            $nextNumber = $ruleCount + 1;
+        }
 
-        var_dump( $results );
+        $insertID = $this->conn->insertRecord(self::T_GAMERULES, array(
+                "active_game_code"=>$gameCode,
+                "rule_code"=>$ruleCode,
+                "rule_order"=>$nextNumber
+            ));
 
-        //TODO: complete
-
-        return $results;
+        return $insertID;
 
     }
 
@@ -221,6 +230,29 @@ class ChaosDB{
         //Remove extra records and only send back the names
         foreach ($results as $record){
             array_push($output, $record["username"]);
+        }
+
+        return $output;
+
+    }
+
+    //Returns all rules in the current game
+    public function getRulesInGame($gameCode){
+        if( empty($gameCode) ){
+            return array();
+        }
+
+        //Set permissions to user
+        $this->setUser();
+
+        //Select all rules with the matching game code
+        $queryString = "SELECT gr.rule_code, r.rule_text, gr.rule_order FROM game_rules gr INNER JOIN rules r ON r.rule_code=gr.rule_code WHERE active_game_code='$gameCode' ORDER BY rule_order DESC";
+        $results = $this->conn->queryRaw($queryString);
+
+        //Format the output to remove extra records
+        $output = array();
+        foreach( $results as $record ){
+            array_push( $output, $record["rule_code"], $record["rule_text"], $record["rule_order"]);
         }
 
         return $output;

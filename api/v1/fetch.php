@@ -31,11 +31,13 @@ if( !$doesExist ){
 //Pull in a list of all active players
 $activePlayers = $conn->getPlayersInGame($game_code);
 
-//TODO: Get the list of active rules
+//Pull in all actuve rules
+$gameRules = $conn->getRulesInGame($game_code);
 
 //Create the array to hold the response
 $response = array();
 
+$response["roomRules"] = $gameRules;
 $response["roomCode"] = $game_code;
 $response["activePlayers"] = $activePlayers;
 
