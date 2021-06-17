@@ -95,6 +95,7 @@ section#content > div{
 #play-area #game-info{      height: 40%;    width: 40%; }
 #play-area #game-controls{  height: 40%;    width: 60%; }
 #play-area #game-rules{     height: 60%;    width: 100%; }
+#play-area #game-rules #rules-scroll-area{ height: 75%;    width: 100%; }
 
 #play-area > section{
     display: inline-block;
@@ -140,3 +141,20 @@ section#content > div{
     font-weight: bolder;
     border-top: none;
 }
+
+#play-area #game-rules #rules-scroll-area{
+    overflow-y: scroll;
+}
+
+#play-area #game-rules #room-rules-display li{
+    padding: 5px;
+    color: gray;
+    border-bottom: 5px solid grey;
+}
+
+#play-area #game-rules #room-rules-display li:nth-child(1){font-weight: 600; color: #000000; border-bottom: 5px solid #000000;}
+#play-area #game-rules #room-rules-display li:nth-child(2){font-weight: 500; color: #111111; border-bottom: 5px solid #111111;}
+#play-area #game-rules #room-rules-display li:nth-child(3){font-weight: 400; color: #222222; border-bottom: 5px solid #222222;}
+#play-area #game-rules #room-rules-display li:nth-child(4){font-weight: 300; color: #333333; border-bottom: 5px solid #333333;}
+#play-area #game-rules #room-rules-display li:nth-child(5){font-weight: 200; color: #444444; border-bottom: 5px solid #444444;}
+
