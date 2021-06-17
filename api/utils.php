@@ -12,7 +12,7 @@ function generateGameCode(){
     //Get a random number and add it to the end
     $newCode = $suffix . array_rand($numbers, 1);
 
-    return $newCode;
+    return strtoupper( $newCode );
 }
 
 //Generates a player name randomly

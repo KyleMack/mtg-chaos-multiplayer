@@ -134,7 +134,7 @@ section#content > div{
 
 #play-area #room-players-display li{
     font-size: 0.8em;
-    border-top: 2px solid black;
+    border-top: 2px solid #550000;
 }
 
 #play-area #room-players-display li:first-child{
@@ -152,9 +152,9 @@ section#content > div{
     border-bottom: 5px solid grey;
 }
 
-#play-area #game-rules #room-rules-display li:nth-child(1){font-weight: 600; color: #000000; border-bottom: 5px solid #000000;}
-#play-area #game-rules #room-rules-display li:nth-child(2){font-weight: 500; color: #111111; border-bottom: 5px solid #111111;}
-#play-area #game-rules #room-rules-display li:nth-child(3){font-weight: 400; color: #222222; border-bottom: 5px solid #222222;}
-#play-area #game-rules #room-rules-display li:nth-child(4){font-weight: 300; color: #333333; border-bottom: 5px solid #333333;}
-#play-area #game-rules #room-rules-display li:nth-child(5){font-weight: 200; color: #444444; border-bottom: 5px solid #444444;}
+#play-area #game-rules #room-rules-display li:nth-child(1){font-weight: 600; color: #00AA00; border-bottom: 5px solid #00AA00;}
+#play-area #game-rules #room-rules-display li:nth-child(2){font-weight: 500; color: #11AA11; border-bottom: 5px solid #11AA11;}
+#play-area #game-rules #room-rules-display li:nth-child(3){font-weight: 400; color: #22AA22; border-bottom: 5px solid #22AA22;}
+#play-area #game-rules #room-rules-display li:nth-child(4){font-weight: 300; color: #33AA33; border-bottom: 5px solid #33AA33;}
+#play-area #game-rules #room-rules-display li:nth-child(5){font-weight: 200; color: #44AA44; border-bottom: 5px solid #44AA44;}
 

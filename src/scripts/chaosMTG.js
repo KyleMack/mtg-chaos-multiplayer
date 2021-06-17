@@ -72,7 +72,7 @@ async function createNewRoom(){
             setPlayerName(json["playerName"]);
             setGameCode(json["gameCode"]);
 
-            updateGame();
+	    updateGame();
 	    setTimeout(()=>{displayControls();updateScreen();}, 5000);
 
             scheduleUpdate();
@@ -103,11 +103,15 @@ async function joinRoom(){
         .then(json => {
             l(json);
 
+	    //TODO: Check the returned json for a failure, and display error to the user
+
             //Process the returned json
             processJoinData( json );
 
-            displayControls();
-            updateGame(true);
+            displaySuccessMessage(json["gameCode"], json["playerName"]);
+	
+	    updateGame();
+	    setTimeout(()=>{displayControls();updateScreen();}, 5000);
             
             scheduleUpdate();
         });
