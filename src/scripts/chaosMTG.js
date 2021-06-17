@@ -72,8 +72,8 @@ async function createNewRoom(){
             setPlayerName(json["playerName"]);
             setGameCode(json["gameCode"]);
 
-            displayControls();
-            updateGame(true);
+            updateGame();
+	    setTimeout(()=>{displayControls();updateScreen();}, 5000);
 
             scheduleUpdate();
         })
@@ -146,7 +146,7 @@ function roll(type = "CHAOS"){
 	//Perform the fetch call the the roll api with the roll type and game code
 	callRollAPI( rollArg, getGameCode() )
 		.then( json => {
-			l(json);
+			updateGame(true);
 		});
 
 

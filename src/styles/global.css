@@ -108,11 +108,23 @@ section#content > div{
 
 
 #play-area #game-info{
+   
     background-color: lightblue;
 }
 
 #play-area #game-controls{
     background-color: lightcoral;
+}
+
+#play-area #game-controls button{
+    width: 100%;
+    height: 10%;
+
+    float: left;    
+
+    border: none;
+    border-radius-top-left: 5px;
+    border-radius-bottom-right: 5px;
 }
 
 #play-area #game-rules{
