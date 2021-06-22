@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/styles/global.css">
+    <link rel="stylesheet" href="src/styles/cardSpin.css">
+    <title>Chaos Multiplayer</title>
+</head>
+<body>
+    
+    <!-- Main content of the page -->
+    <section id="content">
+        <div id="login-content">    
+            <header>
+                <h3>Magic: The Gathering</h3>
+                <h5>Multiplayer Chaos</h5>
+            </header>
+
+            <section id="login-form">
+                <button onclick="createNewRoom();">Create Room</button>
+                <button onclick="displayJoinRoomScreen();">Join Room</button>
+            </section>
+
+            <footer>
+
+            </footer>
+        </div>
+    </section>
+
+    <!-- Template for the loading screen -->
+    <template id="loading-page">
+        <div id="loading-content">
+            <h1 id="loading-message">
+                Loading...
+            </h1>
+            <p id="loading-text"></p>
+            <section>
+                <div class="scene">
+                <div class="card">
+                    <div class="card__face card__face--front"></div>
+                    <div class="card__face card__face--back"></div>
+                </div>
+            </div>
+            </section>
+        </div>
+    </template>
+
+    <!-- Template for user joining a room -->
+    <template id="join-room">
+        <div id="join-room-interface">
+            <h3>Enter your room code</h3>
+            <p id="error-message"></p>
+            <input id="room-code-input" name="roomCode" type="text" placeholder="Room Code">
+            <button onclick="joinRoom();">Join Room</button>
+        </div>
+    </template>
+
+    <!-- Template for the user interface for the game owner-->
+    <template id="interface">
+        <div id="play-area">
+            <section id="game-info">
+                <h3>Room Code</h3>
+                <p id="room-code-display">#####</p>
+                <h3>Active Players</h3>
+                <ul id="room-players-display">
+                    <li>#####</li>
+                    <li>#####</li>
+                    <li>#####</li>
+                    <li>#####</li>
+                    <li>#####</li>
+                </ul>
+            </section>
+            <section id="game-controls">
+                <p>Controls</p>
+		<button onclick="roll('CHAOS')" >Roll Chaos</button>
+		<button onclick="roll('ENCHANT')" >Roll Enchant World</button>
+		<button onclick="roll('PERSONA')" >Roll Persona</button>
+		<button onclick="roll('DURGS')" >Roll Durgs</button>
+		<button onclick="roll('PUNISHMENT')" >Roll Punishment</button>
+		<button onclick="roll('WACKY')" >Roll Wacky</button>
+		<button>Add Blank Line</button>
+            </section>
+            <section id="game-rules">
+                <h3>Rules</h3>
+                <section id="rule-scroll-area">
+                <ul id="ro	om-rules-display">
+                </ul>
+		</section?
+            </section>
+        </div>
+    </template>
+
+    <!-- Pull in scripts --> 
+    <script type="text/javascript" src="src/scripts/classes.js"></script>
+    <script type="text/javascript" src="src/scripts/utils.js"></script>
+    <script type="text/javascript" src="src/scripts/chaosMTG.js"></script>
+</body>
+</html>
