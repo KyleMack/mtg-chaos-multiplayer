@@ -29,6 +29,24 @@
         </div>
     </section>
 
+    <template id="home-content">
+        <div id="login-content">    
+            <header>
+                <h3>Magic: The Gathering</h3>
+                <h5>Multiplayer Chaos</h5>
+            </header>
+
+            <section id="login-form">
+                <button onclick="createNewRoom();">Create Room</button>
+                <button onclick="displayJoinRoomScreen();">Join Room</button>
+            </section>
+
+            <footer>
+
+            </footer>
+        </div>
+    </template>
+
     <!-- Template for the loading screen -->
     <template id="loading-page">
         <div id="loading-content">
@@ -54,7 +72,9 @@
             <p id="error-message"></p>
             <input id="room-code-input" name="roomCode" type="text" placeholder="Room Code">
             <button onclick="joinRoom();">Join Room</button>
-        </div>
+	    <p id="join-room-message">(Room codes are not case sensitive)</p>
+            <button onclick="displayHomeScreen();"> <- Home </button>
+	</div>
     </template>
 
     <!-- Template for the user interface for the game owner-->
@@ -80,14 +100,13 @@
 		<button onclick="roll('DURGS')" >Roll Durgs</button>
 		<button onclick="roll('PUNISHMENT')" >Roll Punishment</button>
 		<button onclick="roll('WACKY')" >Roll Wacky</button>
-		<button>Add Blank Line</button>
             </section>
             <section id="game-rules">
                 <h3>Rules</h3>
-<section id="rules-scroll-area">
-                <ul id="room-rules-display">
-                </ul>
-</section>
+		<section id="rules-scroll-area">
+                    <ul id="room-rules-display">
+                    </ul>
+		</section>
             </section>
         </div>
     </template>

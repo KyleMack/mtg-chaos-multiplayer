@@ -1,5 +1,9 @@
 "use strict";
 
+//Displays the home page
+function displayHomeScreen(){
+    updateContent( getHomePageContent() );
+}
 
 //Displays the loading screen
 function displayLoadingScreen(){

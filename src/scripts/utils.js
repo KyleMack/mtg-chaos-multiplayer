@@ -3,6 +3,7 @@
 const DEBUGGING = true;
 
 const CONTENT_SELECTOR  = "section#content";
+const HOME_TEMPLATE     = "template#home";
 const LOADING_TEMPLATE  = "template#loading-page";
 const CARD_TEMPLATE     = "template#card";
 const CONTROLS_TEMPLATE = "template#interface";
@@ -88,6 +89,11 @@ function updateContent(html){
     //Update the content section with the attached HTML
     document.querySelector(CONTENT_SELECTOR).innerHTML = "";
     document.querySelector(CONTENT_SELECTOR).appendChild(html);
+}
+
+//Gets the content for the 'Home' page
+function getHomePageContext(){
+    return getTemplate(HOME_TEMPLATE);
 }
 
 //Gets the content for the 'Loading' page
