@@ -109,7 +109,7 @@ async function joinRoom(){
 
 	    //TODO: Check the returned json for a failure, and display error to the user
 
-            //Process the returned json
+	    //Process the returned json
             processJoinData( json );
 
             displaySuccessMessage(json["gameCode"], json["playerName"]);
