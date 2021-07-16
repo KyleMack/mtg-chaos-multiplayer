@@ -122,6 +122,16 @@ async function joinRoom(){
 
 }
 
+//Checks for the URL parameter 'room' and tries to connect to the passed room
+function checkAutoJoin(){
+	//Grab the parameters and check for 'room'
+	const params = new URLSearchparams(window.location.search);
+	if( !params.has('room') ){
+		//If the parameter isn't set, do nothing
+		return;
+	}
+}
+
 //Calls the roll endpoint for the appropriate roll type based on passed type
 function roll(type = "CHAOS"){
 	//Convert the passed type to uppercase
@@ -150,7 +160,7 @@ function roll(type = "CHAOS"){
 			break;
             return;
 	}
-
+	console.log(`Rolling w/code ${rollArg}`);
 	//Perform the fetch call the the roll api with the roll type and game code
 	callRollAPI( rollArg, getGameCode() )
 		.then( json => {
@@ -186,3 +196,4 @@ async function updateGame(performUpdate = false){
             }
         });
 }
+

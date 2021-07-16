@@ -49,22 +49,22 @@ $rollType = strtoupper( $_REQUEST["type"] );
 //Check the parameters to get the rule
 $ruleCode = "";
 switch($rollType){
-    case 'CHAOS':
+    case "C":
         $ruleCode = 'C';
         break;
-    case 'DURGS':
+    case "D":
         $ruleCode = 'D';
         break;
-    case 'ENCHANT':
+    case "E":
         $ruleCode = 'E';
         break;
-    case 'PERSONA':
+    case "P":
         $ruleCode = 'P';
         break;
-    case 'PUNISHMENT':
+    case "U":
         $ruleCode = 'U';
         break;
-    case 'WACKY':
+    case "W":
         $ruleCode = 'W';
         break;
     default:
