@@ -92,10 +92,10 @@ async function createNewRoom(){
 }
 
 //Joins a room using the inputted room code 
-async function joinRoom(){
+async function joinRoom(codeOverride = null){
 
     //Get the room code
-    const roomCode = document.querySelector('#room-code-input').value;
+    const roomCode = ( codeOverride === null ? document.querySelector('#room-code-input').value : codeOverride );
 
     //Display the loading screen
     displayLoadingScreen();
@@ -107,7 +107,12 @@ async function joinRoom(){
         .then(json => {
             l(json);
 
-	    //TODO: Check the returned json for a failure, and display error to the user
+	    //If the join was not successful, display an error and reload the page
+	    if( json["success"] == false ){
+	    	displayErrorMessage();
+		setTimeout( displayJoinRoomScreen, 5000 );
+		return;
+	    }
 
 	    //Process the returned json
             processJoinData( json );
@@ -125,11 +130,14 @@ async function joinRoom(){
 //Checks for the URL parameter 'room' and tries to connect to the passed room
 function checkAutoJoin(){
 	//Grab the parameters and check for 'room'
-	const params = new URLSearchparams(window.location.search);
+	const params = new URLSearchParams(window.location.search);
 	if( !params.has('room') ){
 		//If the parameter isn't set, do nothing
 		return;
 	}
+
+	//If the room param is set, trigger the join process with the room
+	joinRoom(params.get('room'));
 }
 
 //Calls the roll endpoint for the appropriate roll type based on passed type
@@ -196,4 +204,8 @@ async function updateGame(performUpdate = false){
             }
         });
 }
+
+/****************************************************************/
+//Check for auto join
+checkAutoJoin();
 
